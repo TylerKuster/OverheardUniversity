@@ -6,7 +6,10 @@
 //  Copyright (c) 2015 Overheard University, LLC. All rights reserved.
 //
 
+#import <Parse/Parse.h>
+
 #import "AppDelegate.h"
+#import "OULogin.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +20,14 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    [Parse setApplicationId:@"s1516d9AGrB8gWz3GFZ8ykwwNgs5X7Kv8HWUOTLT"
+                  clientKey:@"2n67WP9wvOe5TOUdcwZG8UIRDpzj169j3oaGD7Sz"];
+    
+    [OULogin checkUsername:[[NSUserDefaults standardUserDefaults] stringForKey:@"username"]
+                  password:[[NSUserDefaults standardUserDefaults] stringForKey:@"password"]
+                  andEmail:[[NSUserDefaults standardUserDefaults] stringForKey:@"email"]];
+    
     return YES;
 }
 
@@ -33,13 +44,22 @@
 - (void)applicationWillEnterForeground:(UIApplication *)application {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
 }
-
-- (void)applicationDidBecomeActive:(UIApplication *)application {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-}
-
-- (void)applicationWillTerminate:(UIApplication *)application {
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-}
+//
+//- (BOOL)application:(UIApplication *)application
+//            openURL:(NSURL *)url
+//  sourceApplication:(NSString *)sourceApplication
+//         annotation:(id)annotation {
+//    return [FBAppCall handleOpenURL:url
+//                  sourceApplication:sourceApplication
+//                        withSession:[PFFacebookUtils session]];
+//}
+//
+//- (void)applicationDidBecomeActive:(UIApplication *)application {
+//    [FBAppCall handleDidBecomeActiveWithSession:[PFFacebookUtils session]];
+//}
+//
+//- (void)applicationWillTerminate:(UIApplication *)application {
+//    [[PFFacebookUtils session] close];
+//}
 
 @end
