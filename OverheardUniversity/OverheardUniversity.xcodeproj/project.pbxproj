@@ -15,6 +15,9 @@
 		461BDCCE1AA411C400B52624 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 461BDCCC1AA411C400B52624 /* LaunchScreen.xib */; };
 		461BDCDA1AA411C400B52624 /* OverheardUniversityTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 461BDCD91AA411C400B52624 /* OverheardUniversityTests.m */; };
 		463967A31AA6DE3F005EE13F /* OULogin.m in Sources */ = {isa = PBXBuildFile; fileRef = 463967A21AA6DE3F005EE13F /* OULogin.m */; };
+		46592AFA1AAAFDD90018B48E /* OUViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46592AF91AAAFDD90018B48E /* OUViewController.m */; };
+		46FF84851AAD306C0003FD29 /* TestSplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46FF84841AAD306C0003FD29 /* TestSplashViewController.m */; };
+		46FF84881AAD30880003FD29 /* TestOnboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46FF84871AAD30880003FD29 /* TestOnboardViewController.m */; };
 		E099ED6764F750CDBFCEB62F /* libPods-OverheardUniversity.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E092EBB8F174924EFCA0710 /* libPods-OverheardUniversity.a */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +49,12 @@
 		461BDCD91AA411C400B52624 /* OverheardUniversityTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OverheardUniversityTests.m; sourceTree = "<group>"; };
 		463967A11AA6DE3F005EE13F /* OULogin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OULogin.h; sourceTree = "<group>"; };
 		463967A21AA6DE3F005EE13F /* OULogin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OULogin.m; sourceTree = "<group>"; };
+		46592AF81AAAFDD90018B48E /* OUViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OUViewController.h; sourceTree = "<group>"; };
+		46592AF91AAAFDD90018B48E /* OUViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OUViewController.m; sourceTree = "<group>"; };
+		46FF84831AAD306C0003FD29 /* TestSplashViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestSplashViewController.h; sourceTree = "<group>"; };
+		46FF84841AAD306C0003FD29 /* TestSplashViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestSplashViewController.m; sourceTree = "<group>"; };
+		46FF84861AAD30880003FD29 /* TestOnboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestOnboardViewController.h; sourceTree = "<group>"; };
+		46FF84871AAD30880003FD29 /* TestOnboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestOnboardViewController.m; sourceTree = "<group>"; };
 		F8818837337A23BE819484CF /* Pods-OverheardUniversity.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OverheardUniversity.release.xcconfig"; path = "Pods/Target Support Files/Pods-OverheardUniversity/Pods-OverheardUniversity.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -93,6 +102,12 @@
 			children = (
 				461BDCC11AA411C400B52624 /* AppDelegate.h */,
 				461BDCC21AA411C400B52624 /* AppDelegate.m */,
+				46FF84831AAD306C0003FD29 /* TestSplashViewController.h */,
+				46FF84841AAD306C0003FD29 /* TestSplashViewController.m */,
+				46FF84861AAD30880003FD29 /* TestOnboardViewController.h */,
+				46FF84871AAD30880003FD29 /* TestOnboardViewController.m */,
+				46592AF81AAAFDD90018B48E /* OUViewController.h */,
+				46592AF91AAAFDD90018B48E /* OUViewController.m */,
 				463967A11AA6DE3F005EE13F /* OULogin.h */,
 				463967A21AA6DE3F005EE13F /* OULogin.m */,
 				461BDCC41AA411C400B52624 /* LoginViewController.h */,
@@ -299,9 +314,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				461BDCC61AA411C400B52624 /* LoginViewController.m in Sources */,
+				46FF84851AAD306C0003FD29 /* TestSplashViewController.m in Sources */,
 				463967A31AA6DE3F005EE13F /* OULogin.m in Sources */,
 				461BDCC31AA411C400B52624 /* AppDelegate.m in Sources */,
+				46FF84881AAD30880003FD29 /* TestOnboardViewController.m in Sources */,
 				461BDCC01AA411C400B52624 /* main.m in Sources */,
+				46592AFA1AAAFDD90018B48E /* OUViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,6 +9,7 @@
 #import <Parse/Parse.h>
 
 #import "AppDelegate.h"
+#import "OUViewController.h"
 #import "OULogin.h"
 
 @interface AppDelegate ()
@@ -23,10 +24,6 @@
     
     [Parse setApplicationId:@"s1516d9AGrB8gWz3GFZ8ykwwNgs5X7Kv8HWUOTLT"
                   clientKey:@"2n67WP9wvOe5TOUdcwZG8UIRDpzj169j3oaGD7Sz"];
-    
-    [OULogin checkUsername:[[NSUserDefaults standardUserDefaults] stringForKey:@"username"]
-                  password:[[NSUserDefaults standardUserDefaults] stringForKey:@"password"]
-                  andEmail:[[NSUserDefaults standardUserDefaults] stringForKey:@"email"]];
     
     return YES;
 }
@@ -44,6 +41,7 @@
 - (void)applicationWillEnterForeground:(UIApplication *)application {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
 }
+
 //
 //- (BOOL)application:(UIApplication *)application
 //            openURL:(NSURL *)url
