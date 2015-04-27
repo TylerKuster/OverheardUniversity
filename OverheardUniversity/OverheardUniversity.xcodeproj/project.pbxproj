@@ -223,7 +223,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 461BDCB51AA411C400B52624 /* Build configuration list for PBXProject "OverheardUniversity" */;
+			buildConfigurationList = 461BDCB51AA411C400B52624 /* Build configuration list for PBXProject "overhearduniversity" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -499,7 +499,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		461BDCB51AA411C400B52624 /* Build configuration list for PBXProject "OverheardUniversity" */ = {
+		461BDCB51AA411C400B52624 /* Build configuration list for PBXProject "overhearduniversity" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				461BDCDB1AA411C400B52624 /* Debug */,
