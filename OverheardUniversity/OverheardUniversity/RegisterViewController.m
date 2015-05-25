@@ -1,36 +1,27 @@
 //
-//  TestSplashViewController.m
-//  OverheardUniversity
+//  RegisterViewController.m
+//  overhearduniversity
 //
-//  Created by Tyler Kuster on 3/8/15.
+//  Created by Tyler Kuster on 5/24/15.
 //  Copyright (c) 2015 Overheard University, LLC. All rights reserved.
 //
 
-#import <CLHoppingViewController/CLHoppingViewController.h>
-#import "TestSplashViewController.h"
+#import "RegisterViewController.h"
 
-@interface TestSplashViewController ()
+@interface RegisterViewController ()
 
 @end
 
-@implementation TestSplashViewController
+@implementation RegisterViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self startActivityIndicator];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (void)startActivityIndicator {
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        NSLog(@"spash screen");
-        [self.hoppingViewController unhop];
-    });
 }
 
 /*

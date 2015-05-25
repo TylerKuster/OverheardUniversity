@@ -27,6 +27,7 @@
 
 - (IBAction)onboardingFinished:(id)sender
 {
+    NSLog(@"onboarded");
     [self.hoppingViewController unhop];
 }
 

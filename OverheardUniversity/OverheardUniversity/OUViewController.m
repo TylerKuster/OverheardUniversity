@@ -7,6 +7,7 @@
 //
 
 #import "OUViewController.h"
+#import <Parse/Parse.h>
 
 @interface OUViewController ()
 
@@ -22,9 +23,12 @@
     // first, hop to splash
     [self hopTo:@"splash" then:^{
         // then, hop to the onboarding sequence (but only once)
+                NSLog(@"finished splash");
         [self conditionalHopToOnboarding:^{
             // then, hop to the main app controller (and that's it)
-            [self hopTo:@"main" then:nil];
+            [self hopTo:@"main" then:^{
+                NSLog(@"made it");
+            }];
         }];
     }];
 }
@@ -33,9 +37,11 @@
 - (void)conditionalHopToOnboarding:(void(^)(void))next
 {
     if (![[NSUserDefaults standardUserDefaults] stringForKey:@"username"]) {
-        [self hopTo:@"onboarding" then:next];
+        NSLog(@"no user");
+        [self hopTo:@"register" then:next];
     }
     else {
+        NSLog(@"not sure again");
         next();
     }
 }
