@@ -23,6 +23,7 @@
 		46605F3F1B13DD49005D4BF2 /* OUBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 46605F3E1B13DD49005D4BF2 /* OUBarButton.m */; };
 		46605F421B143D3A005D4BF2 /* OUEmailButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 46605F411B143D3A005D4BF2 /* OUEmailButton.m */; };
 		46605F481B1442DB005D4BF2 /* OUProgressBarTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 46605F471B1442DB005D4BF2 /* OUProgressBarTextField.m */; };
+		46605F4B1B1454BB005D4BF2 /* OUTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46605F4A1B1454BB005D4BF2 /* OUTestViewController.m */; };
 		46B805D21B003B490003D184 /* OUConversationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46B805D11B003B490003D184 /* OUConversationViewController.m */; };
 		46B805D51B0044050003D184 /* DemoModelData.m in Sources */ = {isa = PBXBuildFile; fileRef = 46B805D41B0044050003D184 /* DemoModelData.m */; };
 		46B805D81B0044720003D184 /* NSUserDefaults+DemoSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 46B805D71B0044720003D184 /* NSUserDefaults+DemoSettings.m */; };
@@ -75,6 +76,8 @@
 		46605F411B143D3A005D4BF2 /* OUEmailButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OUEmailButton.m; sourceTree = "<group>"; };
 		46605F461B1442DB005D4BF2 /* OUProgressBarTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OUProgressBarTextField.h; sourceTree = "<group>"; };
 		46605F471B1442DB005D4BF2 /* OUProgressBarTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OUProgressBarTextField.m; sourceTree = "<group>"; };
+		46605F491B1454BB005D4BF2 /* OUTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OUTestViewController.h; sourceTree = "<group>"; };
+		46605F4A1B1454BB005D4BF2 /* OUTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OUTestViewController.m; sourceTree = "<group>"; };
 		46B805D01B003B490003D184 /* OUConversationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OUConversationViewController.h; sourceTree = "<group>"; };
 		46B805D11B003B490003D184 /* OUConversationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OUConversationViewController.m; sourceTree = "<group>"; };
 		46B805D31B0044050003D184 /* DemoModelData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoModelData.h; sourceTree = "<group>"; };
@@ -151,6 +154,8 @@
 				463A6B231AEDE15B00557FA3 /* OUNavigationViewController.m */,
 				46605F3A1B13D67F005D4BF2 /* OULoginRegisterViewController.h */,
 				46605F3B1B13D67F005D4BF2 /* OULoginRegisterViewController.m */,
+				46605F491B1454BB005D4BF2 /* OUTestViewController.h */,
+				46605F4A1B1454BB005D4BF2 /* OUTestViewController.m */,
 				46605F3D1B13DD49005D4BF2 /* OUBarButton.h */,
 				46605F3E1B13DD49005D4BF2 /* OUBarButton.m */,
 				46605F401B143D3A005D4BF2 /* OUEmailButton.h */,
@@ -364,6 +369,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46605F4B1B1454BB005D4BF2 /* OUTestViewController.m in Sources */,
 				461BDCC61AA411C400B52624 /* LoginViewController.m in Sources */,
 				463A6B241AEDE15B00557FA3 /* OUNavigationViewController.m in Sources */,
 				46605F421B143D3A005D4BF2 /* OUEmailButton.m in Sources */,

@@ -1,27 +1,21 @@
 //
-//  OULoginRegisterViewController.m
+//  OUTestViewController.m
 //  overhearduniversity
 //
-//  Created by Tyler Kuster on 5/25/15.
+//  Created by Tyler Kuster on 5/26/15.
 //  Copyright (c) 2015 Overheard University, LLC. All rights reserved.
 //
 
-#import "OULoginRegisterViewController.h"
-#import "TTScrollSlidingPagesController.h"
-#import "OUConversationViewController.h"
-#import "RegisterViewController.h"
-#import "LoginViewController.h"
 #import "OUTestViewController.h"
-//#import "TabOneViewController.h"
-//#import "TabTwoViewController.h"
+#import "TTScrollSlidingPagesController.h"
 #import "TTSlidingPage.h"
 #import "TTSlidingPageTitle.h"
 
-@interface OULoginRegisterViewController ()
+@interface OUTestViewController ()
 @property (strong, nonatomic) TTScrollSlidingPagesController *slider;
 @end
 
-@implementation OULoginRegisterViewController
+@implementation OUTestViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -57,7 +51,6 @@
     self.slider.view.frame = self.view.frame;
     [self.view insertSubview:self.slider.view atIndex:0];
     [self addChildViewController:self.slider];
-
 }
 
 - (void)didReceiveMemoryWarning {
@@ -74,10 +67,9 @@
     // Pass the selected object to the new view controller.
 }
 */
-
 #pragma mark TTSlidingPagesDataSource methods
 -(int)numberOfPagesForSlidingPagesViewController:(TTScrollSlidingPagesController *)source{
-    return 3; //just return 7 pages as an example
+    return 2; //just return 7 pages as an example
 }
 
 -(TTSlidingPage *)pageForSlidingPagesViewController:(TTScrollSlidingPagesController*)source atIndex:(int)index
@@ -88,19 +80,17 @@
     switch (index) {
         case 0:
         {
-            LoginViewController* viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"login"];
+            UIViewController* viewController = [[UIViewController alloc] init];
+            viewController.view.backgroundColor = [UIColor purpleColor];
+            
             return [[TTSlidingPage alloc] initWithContentViewController: viewController];
             break;
         }
         case 1:
         {
-            OUTestViewController* viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"overheard"];
-            return [[TTSlidingPage alloc] initWithContentViewController: viewController];
-            break;
-        }
-        case 2:
-        {
-            RegisterViewController* viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"register"];
+            UIViewController* viewController = [[UIViewController alloc] init];
+            viewController.view.backgroundColor = [UIColor orangeColor];
+            
             return [[TTSlidingPage alloc] initWithContentViewController: viewController];
             break;
         }

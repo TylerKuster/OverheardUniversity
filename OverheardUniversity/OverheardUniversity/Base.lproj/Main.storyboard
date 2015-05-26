@@ -238,6 +238,24 @@ first confirm a valid university email</string>
             </objects>
             <point key="canvasLocation" x="1986" y="413"/>
         </scene>
+        <!--Test View Controller-->
+        <scene sceneID="aS8-R7-Pco">
+            <objects>
+                <viewController storyboardIdentifier="overheard" id="T4w-7e-9Ew" customClass="OUTestViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rmI-Yo-3jH"/>
+                        <viewControllerLayoutGuide type="bottom" id="HAW-9o-2fS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1Cp-32-Lva">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cCX-2e-glR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1986" y="1128"/>
+        </scene>
         <!--Test Splash View Controller-->
         <scene sceneID="bcD-wJ-byW">
             <objects>
