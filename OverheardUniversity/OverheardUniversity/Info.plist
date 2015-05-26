@@ -39,6 +39,6 @@
 	<key>CFBundleDisplayName</key>
 	<string>Overheard</string>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
-	<true/>
+	<false/>
 </dict>
 </plist>

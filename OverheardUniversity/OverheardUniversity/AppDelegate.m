@@ -25,6 +25,8 @@
     [Parse setApplicationId:@"s1516d9AGrB8gWz3GFZ8ykwwNgs5X7Kv8HWUOTLT"
                   clientKey:@"2n67WP9wvOe5TOUdcwZG8UIRDpzj169j3oaGD7Sz"];
     
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    
     return YES;
 }
 

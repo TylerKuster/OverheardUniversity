@@ -18,6 +18,11 @@
 		463A6B241AEDE15B00557FA3 /* OUNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 463A6B231AEDE15B00557FA3 /* OUNavigationViewController.m */; };
 		46592AFA1AAAFDD90018B48E /* OUViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46592AF91AAAFDD90018B48E /* OUViewController.m */; };
 		46605F331B12AED9005D4BF2 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46605F321B12AED9005D4BF2 /* RegisterViewController.m */; };
+		46605F391B13D473005D4BF2 /* THSpringyFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 46605F381B13D473005D4BF2 /* THSpringyFlowLayout.m */; };
+		46605F3C1B13D67F005D4BF2 /* OULoginRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46605F3B1B13D67F005D4BF2 /* OULoginRegisterViewController.m */; };
+		46605F3F1B13DD49005D4BF2 /* OUBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 46605F3E1B13DD49005D4BF2 /* OUBarButton.m */; };
+		46605F421B143D3A005D4BF2 /* OUEmailButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 46605F411B143D3A005D4BF2 /* OUEmailButton.m */; };
+		46605F481B1442DB005D4BF2 /* OUProgressBarTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 46605F471B1442DB005D4BF2 /* OUProgressBarTextField.m */; };
 		46B805D21B003B490003D184 /* OUConversationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46B805D11B003B490003D184 /* OUConversationViewController.m */; };
 		46B805D51B0044050003D184 /* DemoModelData.m in Sources */ = {isa = PBXBuildFile; fileRef = 46B805D41B0044050003D184 /* DemoModelData.m */; };
 		46B805D81B0044720003D184 /* NSUserDefaults+DemoSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 46B805D71B0044720003D184 /* NSUserDefaults+DemoSettings.m */; };
@@ -60,6 +65,16 @@
 		46592AF91AAAFDD90018B48E /* OUViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OUViewController.m; sourceTree = "<group>"; };
 		46605F311B12AED9005D4BF2 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
 		46605F321B12AED9005D4BF2 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		46605F371B13D473005D4BF2 /* THSpringyFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THSpringyFlowLayout.h; sourceTree = "<group>"; };
+		46605F381B13D473005D4BF2 /* THSpringyFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THSpringyFlowLayout.m; sourceTree = "<group>"; };
+		46605F3A1B13D67F005D4BF2 /* OULoginRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OULoginRegisterViewController.h; sourceTree = "<group>"; };
+		46605F3B1B13D67F005D4BF2 /* OULoginRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OULoginRegisterViewController.m; sourceTree = "<group>"; };
+		46605F3D1B13DD49005D4BF2 /* OUBarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OUBarButton.h; sourceTree = "<group>"; };
+		46605F3E1B13DD49005D4BF2 /* OUBarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OUBarButton.m; sourceTree = "<group>"; };
+		46605F401B143D3A005D4BF2 /* OUEmailButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OUEmailButton.h; sourceTree = "<group>"; };
+		46605F411B143D3A005D4BF2 /* OUEmailButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OUEmailButton.m; sourceTree = "<group>"; };
+		46605F461B1442DB005D4BF2 /* OUProgressBarTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OUProgressBarTextField.h; sourceTree = "<group>"; };
+		46605F471B1442DB005D4BF2 /* OUProgressBarTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OUProgressBarTextField.m; sourceTree = "<group>"; };
 		46B805D01B003B490003D184 /* OUConversationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OUConversationViewController.h; sourceTree = "<group>"; };
 		46B805D11B003B490003D184 /* OUConversationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OUConversationViewController.m; sourceTree = "<group>"; };
 		46B805D31B0044050003D184 /* DemoModelData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoModelData.h; sourceTree = "<group>"; };
@@ -129,9 +144,19 @@
 				461BDCC51AA411C400B52624 /* LoginViewController.m */,
 				46605F311B12AED9005D4BF2 /* RegisterViewController.h */,
 				46605F321B12AED9005D4BF2 /* RegisterViewController.m */,
+				46605F371B13D473005D4BF2 /* THSpringyFlowLayout.h */,
+				46605F381B13D473005D4BF2 /* THSpringyFlowLayout.m */,
 				461BDCC71AA411C400B52624 /* Main.storyboard */,
 				463A6B221AEDE15B00557FA3 /* OUNavigationViewController.h */,
 				463A6B231AEDE15B00557FA3 /* OUNavigationViewController.m */,
+				46605F3A1B13D67F005D4BF2 /* OULoginRegisterViewController.h */,
+				46605F3B1B13D67F005D4BF2 /* OULoginRegisterViewController.m */,
+				46605F3D1B13DD49005D4BF2 /* OUBarButton.h */,
+				46605F3E1B13DD49005D4BF2 /* OUBarButton.m */,
+				46605F401B143D3A005D4BF2 /* OUEmailButton.h */,
+				46605F411B143D3A005D4BF2 /* OUEmailButton.m */,
+				46605F461B1442DB005D4BF2 /* OUProgressBarTextField.h */,
+				46605F471B1442DB005D4BF2 /* OUProgressBarTextField.m */,
 				46B805D01B003B490003D184 /* OUConversationViewController.h */,
 				46B805D11B003B490003D184 /* OUConversationViewController.m */,
 				46B805D31B0044050003D184 /* DemoModelData.h */,
@@ -341,14 +366,19 @@
 			files = (
 				461BDCC61AA411C400B52624 /* LoginViewController.m in Sources */,
 				463A6B241AEDE15B00557FA3 /* OUNavigationViewController.m in Sources */,
+				46605F421B143D3A005D4BF2 /* OUEmailButton.m in Sources */,
+				46605F481B1442DB005D4BF2 /* OUProgressBarTextField.m in Sources */,
 				46FF84851AAD306C0003FD29 /* TestSplashViewController.m in Sources */,
 				463967A31AA6DE3F005EE13F /* OULogin.m in Sources */,
+				46605F3C1B13D67F005D4BF2 /* OULoginRegisterViewController.m in Sources */,
 				461BDCC31AA411C400B52624 /* AppDelegate.m in Sources */,
 				46FF84881AAD30880003FD29 /* TestOnboardViewController.m in Sources */,
 				46B805D21B003B490003D184 /* OUConversationViewController.m in Sources */,
+				46605F391B13D473005D4BF2 /* THSpringyFlowLayout.m in Sources */,
 				46605F331B12AED9005D4BF2 /* RegisterViewController.m in Sources */,
 				461BDCC01AA411C400B52624 /* main.m in Sources */,
 				46B805D51B0044050003D184 /* DemoModelData.m in Sources */,
+				46605F3F1B13DD49005D4BF2 /* OUBarButton.m in Sources */,
 				46B805D81B0044720003D184 /* NSUserDefaults+DemoSettings.m in Sources */,
 				46592AFA1AAAFDD90018B48E /* OUViewController.m in Sources */,
 			);
