@@ -10,6 +10,14 @@
 #import "TTSlidingPagesDataSource.h"
 #import "TTSliddingPageDelegate.h"
 
-@interface OUTestViewController : UIViewController <TTSlidingPagesDataSource, TTSliddingPageDelegate>
+typedef NS_ENUM(NSInteger, OnboardingStage)
+{
+    OnboardingLocationRequest,
+    OnboardingSchoolsGrid,
+    OnboardingRegister,
+    OnboardingLogin
+};
+
+@interface OUOnboardingViewController : UIViewController <TTSlidingPagesDataSource, TTSliddingPageDelegate>
 
 @end

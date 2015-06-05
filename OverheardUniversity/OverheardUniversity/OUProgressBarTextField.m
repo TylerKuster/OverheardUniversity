@@ -12,14 +12,16 @@
 
 - (void)commonInit
 {
+    self.layer.cornerRadius = 16.0f;
+    
     CGFloat titleLabelYOffset = self.bounds.origin.y - 32.0f;
     
     self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.bounds.origin.x, titleLabelYOffset, 100.0f, 40.0f)];
-    self.titleLabel.text = @"Register";
+//    self.titleLabel.text = @"Register";
     
     [self addSubview: self.titleLabel];
     
-    self.backgroundColor = [UIColor blueColor];
+    self.backgroundColor = [UIColor whiteColor];
 
     
 }

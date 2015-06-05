@@ -6,16 +6,21 @@
 //  Copyright (c) 2015 Overheard University, LLC. All rights reserved.
 //
 
-#import "OUTestViewController.h"
+#import "OUOnboardingViewController.h"
+#import "LocationRequestViewController.h"
+#import "SchoolListViewController.h"
+#import "RegisterViewController.h"
+#import "LoginViewController.h"
+
 #import "TTScrollSlidingPagesController.h"
 #import "TTSlidingPage.h"
 #import "TTSlidingPageTitle.h"
 
-@interface OUTestViewController ()
+@interface OUOnboardingViewController ()
 @property (strong, nonatomic) TTScrollSlidingPagesController *slider;
 @end
 
-@implementation OUTestViewController
+@implementation OUOnboardingViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -23,9 +28,9 @@
     
     //initial setup of the TTScrollSlidingPagesController.
     self.slider = [[TTScrollSlidingPagesController alloc] init];
-    self.slider.titleScrollerInActiveTextColour = [UIColor whiteColor];
-    self.slider.titleScrollerBottomEdgeColour = [UIColor darkGrayColor];
-    self.slider.titleScrollerBottomEdgeHeight = 2;
+//    self.slider.titleScrollerInActiveTextColour = [UIColor purpleColor];
+//    self.slider.titleScrollerBottomEdgeColour = [UIColor darkGrayColor];
+//    self.slider.titleScrollerBottomEdgeHeight = 2;
     
     //set properties to customiser the slider. Make sure you set these BEFORE you access any other properties on the slider, such as the view or the datasource. Best to do it immediately after calling the init method.
     self.slider.hideStatusBarWhenScrolling = NO;
@@ -35,8 +40,8 @@
     //slider.titleScrollerBackgroundColour = [UIColor darkGrayColor];
     self.slider.disableTitleScrollerShadow = YES;
     self.slider.disableUIPageControl = YES;
-    self.slider.initialPageNumber = 1;
-    //slider.pagingEnabled = NO;
+    self.slider.initialPageNumber = 0;
+    self.slider.pagingEnabled = YES;
     _slider.zoomOutAnimationDisabled = YES;
     //self.slider.disableTitleShadow = YES;
     
@@ -58,18 +63,10 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 #pragma mark TTSlidingPagesDataSource methods
+
 -(int)numberOfPagesForSlidingPagesViewController:(TTScrollSlidingPagesController *)source{
-    return 2; //just return 7 pages as an example
+    return 2;
 }
 
 -(TTSlidingPage *)pageForSlidingPagesViewController:(TTScrollSlidingPagesController*)source atIndex:(int)index
@@ -77,27 +74,50 @@
     //    NSUUID *appID = [[NSUUID alloc] initWithUUIDString:@"d0b43270-f777-11e4-8f6b-667982007156"];
     //
     //    LYRClient *layerClient = [LYRClient clientWithAppID:appID];
+    
     switch (index) {
-        case 0:
+        case OnboardingLocationRequest:
         {
-            UIViewController* viewController = [[UIViewController alloc] init];
-            viewController.view.backgroundColor = [UIColor purpleColor];
+            LocationRequestViewController* viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"locationRequest"];
             
             return [[TTSlidingPage alloc] initWithContentViewController: viewController];
+            
             break;
         }
-        case 1:
+        case OnboardingSchoolsGrid:
         {
-            UIViewController* viewController = [[UIViewController alloc] init];
-            viewController.view.backgroundColor = [UIColor orangeColor];
+            SchoolListViewController* viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"schoolList"];
             
             return [[TTSlidingPage alloc] initWithContentViewController: viewController];
+            
+            break;
+        }
+        case OnboardingRegister:
+        {
+            RegisterViewController* viewController = [RegisterViewController new];
+            
+            return [[TTSlidingPage alloc] initWithContentViewController: viewController];
+            
+            break;
+        }
+        case OnboardingLogin:
+        {
+            LoginViewController* viewController = [LoginViewController new];
+            
+            return [[TTSlidingPage alloc] initWithContentViewController: viewController];
+            
             break;
         }
         default:
             break;
     }
-    
+
+    //            UILabel* label = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 250.0f, 320.0f, 100.0f)];
+    //            label.textAlignment = NSTextAlignmentCenter;
+    //            label.text = [NSString stringWithFormat:@"On boarding screen %i", ++index];
+    //
+    //            [viewController.view addSubview:label];
+
     return nil;
 }
 

@@ -40,5 +40,7 @@
 	<string>Overheard</string>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Because reasons</string>
 </dict>
 </plist>
