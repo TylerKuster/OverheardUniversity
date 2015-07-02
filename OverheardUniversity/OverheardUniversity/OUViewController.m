@@ -38,7 +38,7 @@
 {
     if (![[NSUserDefaults standardUserDefaults] stringForKey:@"username"]) {
         NSLog(@"no user");
-        [self hopTo:@"onboarding" then:next];
+        [self hopTo:@"register" then:next];
     }
     else {
         NSLog(@"not sure again");

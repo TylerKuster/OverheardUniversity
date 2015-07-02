@@ -9,6 +9,15 @@
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
 
+@class LocationRequestViewController;
+
+@protocol LocationRequestViewControllerDelegate <NSObject>
+- (void)didReceiveLocations:(NSArray*)locations;
+
+@end
+
 @interface LocationRequestViewController : UIViewController <CLLocationManagerDelegate>
+
+@property (weak, nonatomic) id<LocationRequestViewControllerDelegate> delegate;
 
 @end

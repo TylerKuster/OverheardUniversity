@@ -12,12 +12,13 @@
 //#import "TabTwoViewController.h"
 #import "TTSlidingPage.h"
 #import "TTSlidingPageTitle.h"
+#import "RegisterViewController.h"
 
 @interface OUNavigationViewController ()
     @property (strong, nonatomic) TTScrollSlidingPagesController *slider;
 @end
 
-@implementation OUNavigationViewController
+@implementation OUNavigationViewController 
 
 - (void)viewDidLoad
 {
@@ -36,9 +37,9 @@
     //slider.titleScrollerItemWidth=60;
     //slider.titleScrollerBackgroundColour = [UIColor darkGrayColor];
     self.slider.disableTitleScrollerShadow = YES;
-    self.slider.disableUIPageControl = YES;
-    self.slider.initialPageNumber = 1;
-    //slider.pagingEnabled = NO;
+    self.slider.disableUIPageControl = NO;
+    self.slider.initialPageNumber = 0;
+//    self.slider.pagingEnabled = NO;
     _slider.zoomOutAnimationDisabled = YES;
     //self.slider.disableTitleShadow = YES;
     
@@ -73,17 +74,14 @@
 */
 #pragma mark TTSlidingPagesDataSource methods
 -(int)numberOfPagesForSlidingPagesViewController:(TTScrollSlidingPagesController *)source{
-    return 3; //just return 7 pages as an example
+    return 4; //just return 7 pages as an example
 }
 
 -(TTSlidingPage *)pageForSlidingPagesViewController:(TTScrollSlidingPagesController*)source atIndex:(int)index
 {
-//    NSUUID *appID = [[NSUUID alloc] initWithUUIDString:@"d0b43270-f777-11e4-8f6b-667982007156"];
-//    
-//    LYRClient *layerClient = [LYRClient clientWithAppID:appID];
-    OUConversationViewController *viewController2 = [[OUConversationViewController alloc] init];//conversationViewControllerWithLayerClient:self.]];
-    
-    return [[TTSlidingPage alloc] initWithContentViewController:viewController2];
+    RegisterViewController* viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"register"];
+
+    return [[TTSlidingPage alloc] initWithContentViewController: viewController];
 }
 
 -(TTSlidingPageTitle *)titleForSlidingPagesViewController:(TTScrollSlidingPagesController *)source atIndex:(int)index{
@@ -122,4 +120,33 @@
     NSLog(@"scrolled to view");
 }
 
+- (void)registerViewController:(RegisterViewController*)registerViewController
+                  didEnterText:(NSString*)text
+               atRegisterStage:(RegisterStage)registerStage
+{
+    switch (registerStage) {
+        case RegisterName:
+        {
+            NSLog(@"Name is %@", text);
+            break;
+        }
+        case RegisterUsername:
+        {
+            NSLog(@"username is %@", text);
+            break;
+        }
+        case RegisterPassword:
+        {
+            NSLog(@"password is %@", text);
+            break;
+        }
+        case RegisterEmail:
+        {
+            NSLog(@"email is %@", text);
+            break;
+        }
+        default:
+            break;
+    }
+}
 @end

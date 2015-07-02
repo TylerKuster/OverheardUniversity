@@ -6,21 +6,26 @@
 //  Copyright (c) 2015 Overheard University, LLC. All rights reserved.
 //
 
-#import "RegisterViewController.h"
-#import "OUProgressBarTextField.h"
 #import <Parse/Parse.h>
 #import <CLHoppingViewController/CLHoppingViewController.h>
+#import <TOMSMorphingLabel/TOMSMorphingLabel.h>
+#import "RegisterViewController.h"
+#import "OUTheme.h"
+//#import "OUProgressBarTextField.h"
+
 
 @interface RegisterViewController ()
-@property (nonatomic, weak) IBOutlet OUProgressBarTextField* usernameTextField;
-@property (nonatomic, weak) IBOutlet UITextField* passwordTextField;
-@property (nonatomic, weak) IBOutlet UITextField* confirmPasswordTextField;
 
-@property (nonatomic, weak) IBOutlet UIButton* logInButton;
-@property (nonatomic, weak) IBOutlet UIButton* facebookButton;
-@property (nonatomic, weak) IBOutlet UIButton* twitterButton;
-@property (nonatomic, weak) IBOutlet UIButton* emailButton;
+@property (nonatomic, strong) TOMSMorphingLabel* messageLabel;
+@property (nonatomic, weak) IBOutlet UITextField* registerTextField;
+
+@property (nonatomic, weak) IBOutlet UIButton* nextButton;
 @property (nonatomic, weak) IBOutlet UIButton* whyButton;
+
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint* overheardGuyBottomConstraint;
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint* registerViewBottomConstraint;
+
+@property (assign) int registerStage;
 
 @end
 
@@ -28,8 +33,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-//    self.usernameTextField.titleLabel.text = @"Test";
+    
+    [self.view.layer insertSublayer:[OUTheme onboardingGradientFromView:self.view] atIndex:0];
+    
+    NSNotificationCenter* notificationCenter = [NSNotificationCenter defaultCenter];
+    [notificationCenter addObserver:self selector:@selector(keyboardOnScreen:) name:UIKeyboardDidShowNotification object:nil];
+    
+    self.registerStage = RegisterName;
+    
+    [self.registerTextField becomeFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -50,8 +62,8 @@
 - (IBAction)registerButtonPressed
 {
     PFUser *user = [PFUser user];
-    user.username = self.usernameTextField.titleLabel.text;
-    user.password = self.passwordTextField.text;
+//    user.username = self.usernameTextField.titleLabel.text;
+//    user.password = self.passwordTextField.text;
     
     [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (!error) {
@@ -72,6 +84,99 @@
         }
     }];
 
+}
+
+- (IBAction)nextButtonPressed:(id)sender
+{
+    switch (self.registerStage) {
+        case RegisterName:
+        {
+            [self setNameWithText:self.registerTextField.text];
+            break;
+        }
+        case RegisterUsername:
+        {
+            break;
+        }
+        case RegisterPassword:
+        {
+            break;
+        }
+        case RegisterEmail:
+        {
+//            [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+//                if (!error) {
+//                    // Hooray! Let them use the app now.
+//                } else {
+//                    NSString *errorString = [error userInfo][@"error"];
+//                    NSLog(@"Login Error:%@", errorString);
+//                    // Show the errorString somewhere and let the user try again.
+//                }
+//            }];
+            break;
+        }
+        default:
+            break;
+    }
+}
+
+- (void)keyboardOnScreen:(NSNotification *)notification
+{
+    NSDictionary *info  = notification.userInfo;
+    NSValue      *value = info[UIKeyboardFrameEndUserInfoKey];
+    
+    CGRect rawFrame      = [value CGRectValue];
+    CGRect keyboardFrame = [self.view convertRect:rawFrame fromView:nil];
+    CGFloat viewOffset = keyboardFrame.origin.y - 136.0f;
+    
+    CGRect labelFrame = CGRectMake(0.0f, viewOffset, [UIScreen mainScreen].bounds.size.width, 100.0f);
+    
+    [UIView animateWithDuration:0.25f
+                          delay:0.0f
+         usingSpringWithDamping:0.8f
+          initialSpringVelocity:1.0f
+                        options:UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
+                        self.registerViewBottomConstraint.constant = viewOffset;
+                        
+                        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                            self.messageLabel = [[TOMSMorphingLabel alloc]initWithFrame:labelFrame];
+                            self.messageLabel.textAlignment = NSTextAlignmentCenter;
+                            self.messageLabel.textColor = [UIColor whiteColor];
+                            self.messageLabel.text = NSLocalizedString(@"First things first, what's your name?", nil);
+                             
+                            [self.view addSubview: self.messageLabel];
+                        });
+                         
+                        [self.view layoutIfNeeded];
+                         
+                     } completion:nil];
+}
+
+- (void)setNameWithText:(NSString*)text
+{
+    [[NSUserDefaults standardUserDefaults] setValue:text forKey:@"name"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    self.registerStage = RegisterUsername;
+}
+
+- (void)checkUsernameWithText:(NSString*)text
+{
+    [[NSUserDefaults standardUserDefaults] setValue:text forKey:@"name"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    self.registerStage = RegisterUsername;
+}
+
+- (void)confirmPasswordMatchWithPassword:(NSString*)password andConfirm:(NSString*)confirm
+{
+    
+}
+
+- (void)confirmEDUWithEmail:(NSString*)email
+{
+    
 }
 
 #pragma mark - UICollectionViewDataSource & Delegate

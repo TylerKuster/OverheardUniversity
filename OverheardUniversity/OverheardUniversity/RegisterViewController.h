@@ -8,6 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+@class RegisterViewController;
+
+typedef NS_ENUM(NSInteger, RegisterStage)
+{
+    RegisterName,
+    RegisterUsername,
+    RegisterPassword,
+    RegisterEmail
+};
+
 @interface RegisterViewController : UIViewController
 
 @end

@@ -16,7 +16,7 @@
 #import "TTSlidingPage.h"
 #import "TTSlidingPageTitle.h"
 
-@interface OUOnboardingViewController ()
+@interface OUOnboardingViewController () <LocationRequestViewControllerDelegate>
 @property (strong, nonatomic) TTScrollSlidingPagesController *slider;
 @end
 
@@ -26,8 +26,19 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    LocationRequestViewController* viewController1 = [self.storyboard instantiateViewControllerWithIdentifier:@"locationRequest"];
+    viewController1.delegate = self;
+    SchoolListViewController* viewController2 = [self.storyboard instantiateViewControllerWithIdentifier:@"schoolList"];
+    RegisterViewController* viewController3 = [self.storyboard instantiateViewControllerWithIdentifier:@"register"];
+    
+    
     //initial setup of the TTScrollSlidingPagesController.
     self.slider = [[TTScrollSlidingPagesController alloc] init];
+    self.slider.dataSource = self;
+    self.slider.delegate = self;
+//     [self.slider setViewControllers:@[viewController1] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:^(BOOL finished) {
+//         NSLog(@"turnedd");
+//     }];
 //    self.slider.titleScrollerInActiveTextColour = [UIColor purpleColor];
 //    self.slider.titleScrollerBottomEdgeColour = [UIColor darkGrayColor];
 //    self.slider.titleScrollerBottomEdgeHeight = 2;
@@ -44,9 +55,9 @@
     self.slider.pagingEnabled = YES;
     _slider.zoomOutAnimationDisabled = YES;
     //self.slider.disableTitleShadow = YES;
-    
+
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7){
-        //        self.slider.hideStatusBarWhenScrolling = YES;//this property normally only makes sense on iOS7+. See the documentation in TTScrollSlidingPagesController.h. If you wanted to use it in iOS6 you'd have to make sure the status bar overlapped the TTScrollSlidingPagesController.
+        self.slider.hideStatusBarWhenScrolling = YES;//this property normally only makes sense on iOS7+. See the documentation in TTScrollSlidingPagesController.h. If you wanted to use it in iOS6 you'd have to make sure the status bar overlapped the TTScrollSlidingPagesController.
     }
     
     //set the datasource.
@@ -78,25 +89,26 @@
     switch (index) {
         case OnboardingLocationRequest:
         {
-            LocationRequestViewController* viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"locationRequest"];
+            LocationRequestViewController* viewController1 = [self.storyboard instantiateViewControllerWithIdentifier:@"locationRequest"];
+            viewController1.delegate = self;
             
-            return [[TTSlidingPage alloc] initWithContentViewController: viewController];
+            return [[TTSlidingPage alloc] initWithContentViewController: viewController1];
             
             break;
         }
         case OnboardingSchoolsGrid:
         {
-            SchoolListViewController* viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"schoolList"];
+            SchoolListViewController* viewController2 = [self.storyboard instantiateViewControllerWithIdentifier:@"schoolList"];
             
-            return [[TTSlidingPage alloc] initWithContentViewController: viewController];
+            return [[TTSlidingPage alloc] initWithContentViewController: viewController2];
             
             break;
         }
         case OnboardingRegister:
         {
-            RegisterViewController* viewController = [RegisterViewController new];
+            RegisterViewController* viewController3 = [RegisterViewController new];
             
-            return [[TTSlidingPage alloc] initWithContentViewController: viewController];
+            return [[TTSlidingPage alloc] initWithContentViewController: viewController3];
             
             break;
         }
@@ -155,6 +167,26 @@
 -(void)didScrollToViewAtIndex:(NSUInteger)index
 {
     NSLog(@"scrolled to view");
+}
+
+#pragma mark - Location Request Delegate
+
+- (void)didReceiveLocations:(NSArray *)locations
+{
+    NSLog(@"handed off array");
+    [self.slider scrollToPage:1 animated:YES];
+}
+
+#pragma mark - UIPageViewController Delegate
+
+- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController
+{
+    return nil;
+}
+
+- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController
+{
+    return nil;
 }
 
 @end
