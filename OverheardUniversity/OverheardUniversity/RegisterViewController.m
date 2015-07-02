@@ -13,6 +13,8 @@
 #import "OUTheme.h"
 //#import "OUProgressBarTextField.h"
 
+static const CGFloat kOffsetValue = 136.0f;
+static const CGFloat kLabelHeight = 100.0f;
 
 @interface RegisterViewController ()
 
@@ -127,28 +129,32 @@
     
     CGRect rawFrame      = [value CGRectValue];
     CGRect keyboardFrame = [self.view convertRect:rawFrame fromView:nil];
-    CGFloat viewOffset = keyboardFrame.origin.y - 136.0f;
+    CGFloat viewOffset = keyboardFrame.origin.y - kOffsetValue;
+    CGRect labelFrame = CGRectMake(0.0f, viewOffset, [UIScreen mainScreen].bounds.size.width, kLabelHeight);
     
-    CGRect labelFrame = CGRectMake(0.0f, viewOffset, [UIScreen mainScreen].bounds.size.width, 100.0f);
-    
+    [self showRegisterMessagesWithFrame:labelFrame andOffset:viewOffset];
+}
+
+- (void)showRegisterMessagesWithFrame:(CGRect)rect andOffset:(CGFloat)offset
+{
     [UIView animateWithDuration:0.25f
                           delay:0.0f
          usingSpringWithDamping:0.8f
           initialSpringVelocity:1.0f
                         options:UIViewAnimationOptionCurveEaseInOut
                      animations:^{
-                        self.registerViewBottomConstraint.constant = viewOffset;
-                        
-                        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                            self.messageLabel = [[TOMSMorphingLabel alloc]initWithFrame:labelFrame];
-                            self.messageLabel.textAlignment = NSTextAlignmentCenter;
-                            self.messageLabel.textColor = [UIColor whiteColor];
-                            self.messageLabel.text = NSLocalizedString(@"First things first, what's your name?", nil);
-                             
-                            [self.view addSubview: self.messageLabel];
-                        });
+                         self.registerViewBottomConstraint.constant = offset;
                          
-                        [self.view layoutIfNeeded];
+                         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                             self.messageLabel = [[TOMSMorphingLabel alloc]initWithFrame:rect];
+                             self.messageLabel.textAlignment = NSTextAlignmentCenter;
+                             self.messageLabel.textColor = [UIColor whiteColor];
+                             self.messageLabel.text = NSLocalizedString(@"First things first, what's your name?", nil);
+                             
+                             [self.view addSubview: self.messageLabel];
+                         });
+                         
+                         [self.view layoutIfNeeded];
                          
                      } completion:nil];
 }
