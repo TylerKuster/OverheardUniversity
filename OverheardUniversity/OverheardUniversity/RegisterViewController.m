@@ -14,6 +14,7 @@
 //#import "OUProgressBarTextField.h"
 
 static const CGFloat kOffsetValue = 136.0f;
+static const CGFloat kOverheardGuyOffsetValue = 310.0f;
 static const CGFloat kLabelHeight = 100.0f;
 
 @interface RegisterViewController ()
@@ -98,14 +99,17 @@ static const CGFloat kLabelHeight = 100.0f;
         }
         case RegisterUsername:
         {
+            [self checkUsernameWithText:self.registerTextField.text];
             break;
         }
         case RegisterPassword:
         {
+            [self confirmPasswordMatchWithPassword:self.registerTextField.text andConfirm:self.registerTextField.text];
             break;
         }
         case RegisterEmail:
         {
+            [self confirmEDUWithEmail:self.registerTextField.text];
 //            [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
 //                if (!error) {
 //                    // Hooray! Let them use the app now.
@@ -132,7 +136,7 @@ static const CGFloat kLabelHeight = 100.0f;
     CGFloat viewOffset = keyboardFrame.origin.y - kOffsetValue;
     CGRect labelFrame = CGRectMake(0.0f, viewOffset, [UIScreen mainScreen].bounds.size.width, kLabelHeight);
     
-    [self showRegisterMessagesWithFrame:labelFrame andOffset:viewOffset];
+    [self showRegisterMessagesWithFrame:labelFrame andOffset:216.0f];
 }
 
 - (void)showRegisterMessagesWithFrame:(CGRect)rect andOffset:(CGFloat)offset
@@ -144,9 +148,11 @@ static const CGFloat kLabelHeight = 100.0f;
                         options:UIViewAnimationOptionCurveEaseInOut
                      animations:^{
                          self.registerViewBottomConstraint.constant = offset;
+                         self.overheardGuyBottomConstraint.constant = kOverheardGuyOffsetValue;
                          
                          dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                              self.messageLabel = [[TOMSMorphingLabel alloc]initWithFrame:rect];
+                             self.messageLabel.font = [OUTheme onboardingFont];
                              self.messageLabel.textAlignment = NSTextAlignmentCenter;
                              self.messageLabel.textColor = [UIColor whiteColor];
                              self.messageLabel.text = NSLocalizedString(@"First things first, what's your name?", nil);
@@ -156,7 +162,9 @@ static const CGFloat kLabelHeight = 100.0f;
                          
                          [self.view layoutIfNeeded];
                          
-                     } completion:nil];
+                     } completion:^(BOOL finished) {
+                         NSLog(@"y position:%f", offset);
+                     }];
 }
 
 - (void)setNameWithText:(NSString*)text
@@ -164,25 +172,71 @@ static const CGFloat kLabelHeight = 100.0f;
     [[NSUserDefaults standardUserDefaults] setValue:text forKey:@"name"];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
+    [self moveTo:RegisterUsername withText:NSLocalizedString(@"Next let's add your username", nil)];
     self.registerStage = RegisterUsername;
 }
 
 - (void)checkUsernameWithText:(NSString*)text
 {
-    [[NSUserDefaults standardUserDefaults] setValue:text forKey:@"name"];
+    [[NSUserDefaults standardUserDefaults] setValue:text forKey:@"username"];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
-    self.registerStage = RegisterUsername;
+    [self moveTo:RegisterUsername withText:NSLocalizedString(@"We should set a password for that", nil)];
+    self.registerStage = RegisterPassword;
 }
 
 - (void)confirmPasswordMatchWithPassword:(NSString*)password andConfirm:(NSString*)confirm
 {
+    if (password == confirm) {
+        [[NSUserDefaults standardUserDefaults] setValue:password forKey:@"password"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        
+        [self moveTo:RegisterUsername withText:NSLocalizedString(@"We need to confirm your university email", nil)];
+        self.registerStage = RegisterUsername;
+    } else
+    {
+        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Oops!"
+                                                        message:@"Those didn't match. Try again?"
+                                                       delegate:self
+                                              cancelButtonTitle:@"Ok"
+                                              otherButtonTitles:nil];
+        [alert show];
+    }
     
 }
 
 - (void)confirmEDUWithEmail:(NSString*)email
 {
+    [[NSUserDefaults standardUserDefaults] setValue:email forKey:@"email"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
     
+    [self signUpUser];
+}
+
+- (void)signUpUser
+{
+    NSUserDefaults* userDefaults = [NSUserDefaults standardUserDefaults];
+    
+    PFUser *user = [PFUser user];
+    user.username = [userDefaults valueForKey:@"username"];
+    user.password = [userDefaults valueForKey:@"password"];
+    user.email = [userDefaults valueForKey:@"email"];
+    
+    [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (!error) {
+            // Hooray! Let them use the app now.
+        } else {
+            NSString *errorString = [error userInfo][@"error"];
+            NSLog(@"Login Error:%@", errorString);
+            // Show the errorString somewhere and let the user try again.
+        }
+    }];
+}
+
+- (void)moveTo:(RegisterStage)newStage withText:(NSString*)message
+{
+    self.registerStage = newStage;
+    self.messageLabel.text = message;
 }
 
 #pragma mark - UICollectionViewDataSource & Delegate

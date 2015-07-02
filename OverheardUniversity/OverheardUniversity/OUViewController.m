@@ -41,7 +41,8 @@
         [self hopTo:@"register" then:next];
     }
     else {
-        NSLog(@"not sure again");
+        NSLog(@"CHANGE THIS");
+        [self hopTo:@"register" then:next];
         next();
     }
 }

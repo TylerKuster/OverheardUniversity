@@ -13,5 +13,6 @@
 + (UIColor*)brandColor;
 + (UIColor*)offWhiteColor;
 + (CAGradientLayer*)onboardingGradientFromView:(UIView*)view;
++ (UIFont*)onboardingFont;
 
 @end

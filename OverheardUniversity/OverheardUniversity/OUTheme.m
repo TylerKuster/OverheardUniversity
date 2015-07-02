@@ -39,4 +39,9 @@
     return gradient;
 }
 
++ (UIFont*)onboardingFont
+{
+    return [UIFont fontWithName:@"AvenirNext-Medium" size:18.0f];
+}
+
 @end
