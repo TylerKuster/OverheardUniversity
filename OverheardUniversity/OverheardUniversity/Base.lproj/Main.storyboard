@@ -112,7 +112,7 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="overheardGuy" translatesAutoresizingMaskIntoConstraints="NO" id="5yY-Tg-JKs">
+                            <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="overheardGuy" translatesAutoresizingMaskIntoConstraints="NO" id="5yY-Tg-JKs">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="173" id="MER-Hb-0aK"/>
@@ -171,6 +171,7 @@
                     </view>
                     <connections>
                         <outlet property="nextButton" destination="5lx-b7-Xlj" id="cSE-v9-3dh"/>
+                        <outlet property="overheardGuy" destination="5yY-Tg-JKs" id="lta-6a-4Gd"/>
                         <outlet property="overheardGuyBottomConstraint" destination="ZnJ-Go-MpT" id="skc-Ls-ycI"/>
                         <outlet property="registerTextField" destination="qnk-BF-vY3" id="eIf-VF-0bs"/>
                         <outlet property="registerViewBottomConstraint" destination="9UZ-pP-f5j" id="A9O-6K-LMq"/>

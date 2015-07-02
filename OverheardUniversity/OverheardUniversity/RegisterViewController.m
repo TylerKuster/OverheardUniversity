@@ -21,6 +21,7 @@ static const CGFloat kLabelHeight = 100.0f;
 
 @property (nonatomic, strong) TOMSMorphingLabel* messageLabel;
 @property (nonatomic, weak) IBOutlet UITextField* registerTextField;
+@property (nonatomic, weak) IBOutlet UIImageView* overheardGuy;
 
 @property (nonatomic, weak) IBOutlet UIButton* nextButton;
 @property (nonatomic, weak) IBOutlet UIButton* whyButton;
@@ -136,7 +137,9 @@ static const CGFloat kLabelHeight = 100.0f;
     CGFloat viewOffset = keyboardFrame.origin.y - kOffsetValue;
     CGRect labelFrame = CGRectMake(0.0f, viewOffset, [UIScreen mainScreen].bounds.size.width, kLabelHeight);
     
-    [self showRegisterMessagesWithFrame:labelFrame andOffset:216.0f];
+    if (self.registerStage == RegisterName) {
+        [self showRegisterMessagesWithFrame:labelFrame andOffset:216.0f];
+    }
 }
 
 - (void)showRegisterMessagesWithFrame:(CGRect)rect andOffset:(CGFloat)offset
@@ -150,8 +153,13 @@ static const CGFloat kLabelHeight = 100.0f;
                          self.registerViewBottomConstraint.constant = offset;
                          self.overheardGuyBottomConstraint.constant = kOverheardGuyOffsetValue;
                          
+                         self.overheardGuy.alpha = 1.0f;
+                         self.registerTextField.text = @"";
+                         
                          dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                             self.messageLabel = [[TOMSMorphingLabel alloc]initWithFrame:rect];
+                             if (!self.messageLabel) {
+                                  self.messageLabel = [[TOMSMorphingLabel alloc]initWithFrame:rect];
+                             }
                              self.messageLabel.font = [OUTheme onboardingFont];
                              self.messageLabel.textAlignment = NSTextAlignmentCenter;
                              self.messageLabel.textColor = [UIColor whiteColor];
@@ -236,6 +244,12 @@ static const CGFloat kLabelHeight = 100.0f;
         } else {
             NSString *errorString = [error userInfo][@"error"];
             NSLog(@"Login Error:%@", errorString);
+            UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Oops!"
+                                                            message:@"Make sure you use a valid email"
+                                                           delegate:self
+                                                  cancelButtonTitle:@"Ok"
+                                                  otherButtonTitles:nil];
+            [alert show];
             // Show the errorString somewhere and let the user try again.
         }
     }];
