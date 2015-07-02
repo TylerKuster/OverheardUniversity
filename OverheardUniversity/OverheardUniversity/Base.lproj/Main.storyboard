@@ -55,6 +55,9 @@
                                                 <include reference="2pL-3N-ud5"/>
                                             </mask>
                                         </variation>
+                                        <connections>
+                                            <outlet property="delegate" destination="k9v-el-bHi" id="H5b-TJ-LI4"/>
+                                        </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5lx-b7-Xlj">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>

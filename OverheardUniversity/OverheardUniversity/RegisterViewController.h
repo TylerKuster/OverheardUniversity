@@ -18,6 +18,6 @@ typedef NS_ENUM(NSInteger, RegisterStage)
     RegisterEmail
 };
 
-@interface RegisterViewController : UIViewController
+@interface RegisterViewController : UIViewController <UITextFieldDelegate>
 
 @end

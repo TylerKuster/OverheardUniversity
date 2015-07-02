@@ -162,9 +162,7 @@ static const CGFloat kLabelHeight = 100.0f;
                          
                          [self.view layoutIfNeeded];
                          
-                     } completion:^(BOOL finished) {
-                         NSLog(@"y position:%f", offset);
-                     }];
+                     } completion:nil];
 }
 
 - (void)setNameWithText:(NSString*)text
@@ -181,27 +179,31 @@ static const CGFloat kLabelHeight = 100.0f;
     [[NSUserDefaults standardUserDefaults] setValue:text forKey:@"username"];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
+    self.registerTextField.secureTextEntry = YES;
     [self moveTo:RegisterUsername withText:NSLocalizedString(@"We should set a password for that", nil)];
     self.registerStage = RegisterPassword;
 }
 
 - (void)confirmPasswordMatchWithPassword:(NSString*)password andConfirm:(NSString*)confirm
 {
-    if (password == confirm) {
+//    if (password == confirm) {
         [[NSUserDefaults standardUserDefaults] setValue:password forKey:@"password"];
         [[NSUserDefaults standardUserDefaults] synchronize];
-        
+    
+        self.registerTextField.secureTextEntry = NO;
+        self.registerTextField.font = [OUTheme onboardingFont];
+    
         [self moveTo:RegisterUsername withText:NSLocalizedString(@"We need to confirm your university email", nil)];
-        self.registerStage = RegisterUsername;
-    } else
-    {
-        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Oops!"
-                                                        message:@"Those didn't match. Try again?"
-                                                       delegate:self
-                                              cancelButtonTitle:@"Ok"
-                                              otherButtonTitles:nil];
-        [alert show];
-    }
+        self.registerStage = RegisterEmail;
+//    } else
+//    {
+//        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Oops!"
+//                                                        message:@"Those didn't match. Try again?"
+//                                                       delegate:self
+//                                              cancelButtonTitle:@"Ok"
+//                                              otherButtonTitles:nil];
+//        [alert show];
+//    }
     
 }
 
@@ -221,10 +223,16 @@ static const CGFloat kLabelHeight = 100.0f;
     user.username = [userDefaults valueForKey:@"username"];
     user.password = [userDefaults valueForKey:@"password"];
     user.email = [userDefaults valueForKey:@"email"];
-    
+
     [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (!error) {
             // Hooray! Let them use the app now.
+        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Woo!"
+                                                        message:@"You're signed up!"
+                                                       delegate:self
+                                              cancelButtonTitle:@"Ok"
+                                              otherButtonTitles:nil];
+        [alert show];
         } else {
             NSString *errorString = [error userInfo][@"error"];
             NSLog(@"Login Error:%@", errorString);
@@ -237,6 +245,7 @@ static const CGFloat kLabelHeight = 100.0f;
 {
     self.registerStage = newStage;
     self.messageLabel.text = message;
+    self.registerTextField.text = @"";
 }
 
 #pragma mark - UICollectionViewDataSource & Delegate
@@ -267,5 +276,12 @@ static const CGFloat kLabelHeight = 100.0f;
     // Pass the selected object to the new view controller.
 }
 */
+
+#pragma mark - UITextFieldDelegate
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [self nextButtonPressed:nil];
+    
+    return NO;
+}
 
 @end
