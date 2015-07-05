@@ -120,33 +120,4 @@
     NSLog(@"scrolled to view");
 }
 
-- (void)registerViewController:(RegisterViewController*)registerViewController
-                  didEnterText:(NSString*)text
-               atRegisterStage:(RegisterStage)registerStage
-{
-    switch (registerStage) {
-        case RegisterName:
-        {
-            NSLog(@"Name is %@", text);
-            break;
-        }
-        case RegisterUsername:
-        {
-            NSLog(@"username is %@", text);
-            break;
-        }
-        case RegisterPassword:
-        {
-            NSLog(@"password is %@", text);
-            break;
-        }
-        case RegisterEmail:
-        {
-            NSLog(@"email is %@", text);
-            break;
-        }
-        default:
-            break;
-    }
-}
 @end

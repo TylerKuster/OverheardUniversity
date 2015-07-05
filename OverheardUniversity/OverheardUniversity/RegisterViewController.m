@@ -7,17 +7,24 @@
 //
 
 #import <Parse/Parse.h>
-#import <CLHoppingViewController/CLHoppingViewController.h>
 #import <TOMSMorphingLabel/TOMSMorphingLabel.h>
+
 #import "RegisterViewController.h"
 #import "OUTheme.h"
-//#import "OUProgressBarTextField.h"
 
 static const CGFloat kOffsetValue = 136.0f;
 static const CGFloat kOverheardGuyOffsetValue = 310.0f;
 static const CGFloat kLabelHeight = 100.0f;
 
-@interface RegisterViewController ()
+typedef NS_ENUM(NSInteger, RegisterStage)
+{
+    RegisterName,
+    RegisterUsername,
+    RegisterPassword,
+    RegisterEmail
+};
+
+@interface RegisterViewController () <UITextFieldDelegate>
 
 @property (nonatomic, strong) TOMSMorphingLabel* messageLabel;
 @property (nonatomic, weak) IBOutlet UITextField* registerTextField;
@@ -63,33 +70,6 @@ static const CGFloat kLabelHeight = 100.0f;
     [alert show];
 }
 
-- (IBAction)registerButtonPressed
-{
-    PFUser *user = [PFUser user];
-//    user.username = self.usernameTextField.titleLabel.text;
-//    user.password = self.passwordTextField.text;
-    
-    [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        if (!error) {
-            // Hooray! Let them use the app now.
-            UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Nice!"
-                                                            message:@"You're all set."
-                                                           delegate:self
-                                                  cancelButtonTitle:@"Yay!"
-                                                  otherButtonTitles:nil];
-            [alert show];
-           
-            [self.hoppingViewController unhop];
-            
-        } else {
-            NSString *errorString = [error userInfo][@"error"];
-            NSLog(@"Login Error:%@", errorString);
-            // Show the errorString somewhere and let the user try again.
-        }
-    }];
-
-}
-
 - (IBAction)nextButtonPressed:(id)sender
 {
     switch (self.registerStage) {
@@ -105,21 +85,13 @@ static const CGFloat kLabelHeight = 100.0f;
         }
         case RegisterPassword:
         {
+            // TODO: Make this actually compare the two text fields
             [self confirmPasswordMatchWithPassword:self.registerTextField.text andConfirm:self.registerTextField.text];
             break;
         }
         case RegisterEmail:
         {
             [self confirmEDUWithEmail:self.registerTextField.text];
-//            [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-//                if (!error) {
-//                    // Hooray! Let them use the app now.
-//                } else {
-//                    NSString *errorString = [error userInfo][@"error"];
-//                    NSLog(@"Login Error:%@", errorString);
-//                    // Show the errorString somewhere and let the user try again.
-//                }
-//            }];
             break;
         }
         default:
@@ -184,6 +156,7 @@ static const CGFloat kLabelHeight = 100.0f;
 
 - (void)checkUsernameWithText:(NSString*)text
 {
+    // TODO: Check if username exists first
     [[NSUserDefaults standardUserDefaults] setValue:text forKey:@"username"];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
@@ -194,6 +167,7 @@ static const CGFloat kLabelHeight = 100.0f;
 
 - (void)confirmPasswordMatchWithPassword:(NSString*)password andConfirm:(NSString*)confirm
 {
+    // TODO: Password confirmation
 //    if (password == confirm) {
         [[NSUserDefaults standardUserDefaults] setValue:password forKey:@"password"];
         [[NSUserDefaults standardUserDefaults] synchronize];
@@ -217,6 +191,7 @@ static const CGFloat kLabelHeight = 100.0f;
 
 - (void)confirmEDUWithEmail:(NSString*)email
 {
+    // TODO: Email confirmation
     [[NSUserDefaults standardUserDefaults] setValue:email forKey:@"email"];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
@@ -234,7 +209,6 @@ static const CGFloat kLabelHeight = 100.0f;
 
     [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (!error) {
-            // Hooray! Let them use the app now.
         UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Woo!"
                                                         message:@"You're signed up!"
                                                        delegate:self
@@ -250,7 +224,6 @@ static const CGFloat kLabelHeight = 100.0f;
                                                   cancelButtonTitle:@"Ok"
                                                   otherButtonTitles:nil];
             [alert show];
-            // Show the errorString somewhere and let the user try again.
         }
     }];
 }
@@ -262,36 +235,8 @@ static const CGFloat kLabelHeight = 100.0f;
     self.registerTextField.text = @"";
 }
 
-#pragma mark - UICollectionViewDataSource & Delegate
-
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return 1;
-}
-
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 6;
-}
-
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cellIdentifier" forIndexPath:indexPath];
-    
-//    UICollectionViewCell* cell = [[UICollectionViewCell alloc] initWithFrame:CGRectMake(0.0f, indexPath.row * 60.0f, self.view.frame.size.width, 60.0f)];
-    cell.backgroundColor = [UIColor blueColor];
-    
-    return cell;
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 #pragma mark - UITextFieldDelegate
+
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     [self nextButtonPressed:nil];
     
