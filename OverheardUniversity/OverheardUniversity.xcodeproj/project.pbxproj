@@ -27,6 +27,9 @@
 		460451831B21859900F3FFA3 /* OUTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 460451821B21859900F3FFA3 /* OUTheme.m */; };
 		460451861B218B7500F3FFA3 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 460451851B218B7500F3FFA3 /* CoreLocation.framework */; };
 		460451891B21925900F3FFA3 /* SchoolGeolocator.m in Sources */ = {isa = PBXBuildFile; fileRef = 460451881B21925900F3FFA3 /* SchoolGeolocator.m */; };
+		4613E3211B49F2A7009B80CD /* OUCampusCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4613E3201B49F2A7009B80CD /* OUCampusCarousel.m */; };
+		4613E3241B49F535009B80CD /* OULocationCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4613E3231B49F535009B80CD /* OULocationCarousel.m */; };
+		4613E3271B49F54D009B80CD /* OUAreaCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4613E3261B49F54D009B80CD /* OUAreaCarousel.m */; };
 		461BDCC01AA411C400B52624 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 461BDCBF1AA411C400B52624 /* main.m */; };
 		461BDCC31AA411C400B52624 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 461BDCC21AA411C400B52624 /* AppDelegate.m */; };
 		461BDCC61AA411C400B52624 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 461BDCC51AA411C400B52624 /* LoginViewController.m */; };
@@ -89,6 +92,12 @@
 		460451851B218B7500F3FFA3 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		460451871B21925900F3FFA3 /* SchoolGeolocator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SchoolGeolocator.h; sourceTree = "<group>"; };
 		460451881B21925900F3FFA3 /* SchoolGeolocator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SchoolGeolocator.m; sourceTree = "<group>"; };
+		4613E31F1B49F2A7009B80CD /* OUCampusCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OUCampusCarousel.h; sourceTree = "<group>"; };
+		4613E3201B49F2A7009B80CD /* OUCampusCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OUCampusCarousel.m; sourceTree = "<group>"; };
+		4613E3221B49F535009B80CD /* OULocationCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OULocationCarousel.h; sourceTree = "<group>"; };
+		4613E3231B49F535009B80CD /* OULocationCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OULocationCarousel.m; sourceTree = "<group>"; };
+		4613E3251B49F54D009B80CD /* OUAreaCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OUAreaCarousel.h; sourceTree = "<group>"; };
+		4613E3261B49F54D009B80CD /* OUAreaCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OUAreaCarousel.m; sourceTree = "<group>"; };
 		461BDCBA1AA411C400B52624 /* OverheardUniversity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OverheardUniversity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		461BDCBE1AA411C400B52624 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		461BDCBF1AA411C400B52624 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -238,6 +247,19 @@
 			path = "Sample Images";
 			sourceTree = "<group>";
 		};
+		4613E3281B49F55B009B80CD /* Carousels */ = {
+			isa = PBXGroup;
+			children = (
+				4613E31F1B49F2A7009B80CD /* OUCampusCarousel.h */,
+				4613E3201B49F2A7009B80CD /* OUCampusCarousel.m */,
+				4613E3251B49F54D009B80CD /* OUAreaCarousel.h */,
+				4613E3261B49F54D009B80CD /* OUAreaCarousel.m */,
+				4613E3221B49F535009B80CD /* OULocationCarousel.h */,
+				4613E3231B49F535009B80CD /* OULocationCarousel.m */,
+			);
+			name = Carousels;
+			sourceTree = "<group>";
+		};
 		461BDCB11AA411C400B52624 = {
 			isa = PBXGroup;
 			children = (
@@ -277,6 +299,7 @@
 				460451821B21859900F3FFA3 /* OUTheme.m */,
 				46D58E0C1B2E4B2000E1B1A7 /* OUActionView.h */,
 				46D58E0D1B2E4B2000E1B1A7 /* OUActionView.m */,
+				4613E3281B49F55B009B80CD /* Carousels */,
 				460451521B216E3600F3FFA3 /* Onboarding */,
 				46605F401B143D3A005D4BF2 /* OUEmailButton.h */,
 				46605F411B143D3A005D4BF2 /* OUEmailButton.m */,
@@ -516,12 +539,15 @@
 				460451891B21925900F3FFA3 /* SchoolGeolocator.m in Sources */,
 				460451831B21859900F3FFA3 /* OUTheme.m in Sources */,
 				463967A31AA6DE3F005EE13F /* OULogin.m in Sources */,
+				4613E3211B49F2A7009B80CD /* OUCampusCarousel.m in Sources */,
 				460451551B216E5F00F3FFA3 /* LocationRequestViewController.m in Sources */,
 				461BDCC31AA411C400B52624 /* AppDelegate.m in Sources */,
 				46FF84881AAD30880003FD29 /* TestOnboardViewController.m in Sources */,
 				46B805D21B003B490003D184 /* OUConversationViewController.m in Sources */,
 				46605F391B13D473005D4BF2 /* THSpringyFlowLayout.m in Sources */,
 				46605F331B12AED9005D4BF2 /* RegisterViewController.m in Sources */,
+				4613E3271B49F54D009B80CD /* OUAreaCarousel.m in Sources */,
+				4613E3241B49F535009B80CD /* OULocationCarousel.m in Sources */,
 				461BDCC01AA411C400B52624 /* main.m in Sources */,
 				4604515D1B21724D00F3FFA3 /* OUSchoolCollectionViewCell.m in Sources */,
 				46B805D51B0044050003D184 /* DemoModelData.m in Sources */,
