@@ -12,7 +12,11 @@
 
 + (UIColor*)brandColor;
 + (UIColor*)offWhiteColor;
++ (UIColor*)randomColor;
 + (CAGradientLayer*)onboardingGradientFromView:(UIView*)view;
 + (UIFont*)onboardingFont;
+
++ (CGRect)areaCarouselRect;
++ (CGRect)locationCarouselRect;
 
 @end

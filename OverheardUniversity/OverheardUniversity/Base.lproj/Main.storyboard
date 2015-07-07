@@ -15,7 +15,7 @@
                     <view key="view" contentMode="scaleToFill" restorationIdentifier="PageNavigation" id="f6B-a9-CJY">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.94739800691604614" green="0.012108827941119671" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <accessibility key="accessibilityConfiguration" label="PageNavigation"/>
                     </view>
                 </viewController>
@@ -184,7 +184,7 @@
         <!--Onboarding View Controller-->
         <scene sceneID="LaB-UJ-Nzf">
             <objects>
-                <viewController storyboardIdentifier="onboarding" id="ckS-NL-aiw" customClass="OUOnboardingViewController" sceneMemberID="viewController">
+                <viewController id="ckS-NL-aiw" customClass="OUOnboardingViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UWR-h7-HE8"/>
                         <viewControllerLayoutGuide type="bottom" id="ndz-OU-ps5"/>
@@ -198,6 +198,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZPZ-HD-2mC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1986" y="413"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="FxK-Ge-Vlw">
+            <objects>
+                <viewController storyboardIdentifier="map" id="ifN-bg-iU0" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jn2-cv-F93"/>
+                        <viewControllerLayoutGuide type="bottom" id="BhR-xF-ghF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Vg6-31-aaP">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.54437112808227539" green="0.079543672502040863" blue="0.68148082494735718" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MUi-0N-lmm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1986" y="1135"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="PRl-Rm-vog">
@@ -543,34 +561,57 @@ first confirm a valid university email</string>
                                     <constraint firstItem="NOJ-sq-DBc" firstAttribute="top" secondItem="yC8-a5-V2J" secondAttribute="top" constant="2" id="coh-Lq-xTf"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jc6-Ab-RUl" userLabel="CampusCarousel" customClass="OUCampusCarousel">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="jc6-Ab-RUl" secondAttribute="trailing" id="3na-cN-snz"/>
+                            <constraint firstAttribute="bottom" secondItem="jc6-Ab-RUl" secondAttribute="bottom" constant="220" id="7dq-TR-b01">
+                                <variation key="widthClass=compact" constant="0.0"/>
+                            </constraint>
                             <constraint firstItem="yC8-a5-V2J" firstAttribute="top" secondItem="1Cp-32-Lva" secondAttribute="top" id="KBp-RV-m2W"/>
+                            <constraint firstItem="jc6-Ab-RUl" firstAttribute="top" secondItem="1Cp-32-Lva" secondAttribute="top" constant="80" id="PXE-E0-Vcl"/>
+                            <constraint firstItem="jc6-Ab-RUl" firstAttribute="leading" secondItem="1Cp-32-Lva" secondAttribute="leading" id="Rf8-OW-Qzp"/>
                             <constraint firstAttribute="trailing" secondItem="yC8-a5-V2J" secondAttribute="trailing" id="VCT-18-aLZ"/>
                             <constraint firstItem="yC8-a5-V2J" firstAttribute="leading" secondItem="1Cp-32-Lva" secondAttribute="leading" id="c3g-JQ-M15"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="yC8-a5-V2J"/>
+                                <exclude reference="jc6-Ab-RUl"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="KBp-RV-m2W"/>
                                 <exclude reference="VCT-18-aLZ"/>
                                 <exclude reference="c3g-JQ-M15"/>
+                                <exclude reference="3na-cN-snz"/>
+                                <exclude reference="7dq-TR-b01"/>
+                                <exclude reference="PXE-E0-Vcl"/>
+                                <exclude reference="Rf8-OW-Qzp"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="yC8-a5-V2J"/>
+                                <include reference="jc6-Ab-RUl"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="KBp-RV-m2W"/>
                                 <include reference="VCT-18-aLZ"/>
                                 <include reference="c3g-JQ-M15"/>
+                                <include reference="3na-cN-snz"/>
+                                <include reference="7dq-TR-b01"/>
+                                <include reference="PXE-E0-Vcl"/>
+                                <include reference="Rf8-OW-Qzp"/>
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="campusCarousel" destination="jc6-Ab-RUl" id="lxa-NZ-D1C"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cCX-2e-glR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

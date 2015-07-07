@@ -7,7 +7,7 @@
 //
 
 #import "iCarousel.h"
-
+//TODO: Link the carousels together via delegate methods. Specifically the while scrolling ones.
 @interface OUCampusCarousel : iCarousel
 
 @end

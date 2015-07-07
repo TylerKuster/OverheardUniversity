@@ -7,9 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "TTSlidingPagesDataSource.h"
-#import "TTSliddingPageDelegate.h"
 
-@interface OUNavigationViewController : UIViewController <TTSlidingPagesDataSource, TTSliddingPageDelegate>
+@interface OUNavigationViewController : UIViewController
 
 @end

@@ -8,6 +8,9 @@
 
 #import "OUTheme.h"
 
+static const CGFloat kAreaCarouselHeight = 300.0f;
+static const CGFloat kLocationCarouselHeight = 200.0f;
+
 @implementation OUTheme
 
 + (UIColor*)brandColor
@@ -30,6 +33,15 @@
     return [UIColor colorWithRed:0.95f green:0.95f blue:0.95f alpha:1.0f];
 }
 
++ (UIColor*)randomColor
+{
+    CGFloat hue = ( arc4random() % 256 / 256.0 );  //  0.0 to 1.0
+    CGFloat saturation = ( arc4random() % 128 / 256.0 ) + 0.5;  //  0.5 to 1.0, away from white
+    CGFloat brightness = ( arc4random() % 128 / 256.0 ) + 0.5;  //  0.5 to 1.0, away from black
+    UIColor* color = [UIColor colorWithHue:hue saturation:saturation brightness:brightness alpha:1];
+    
+    return color;
+}
 + (CAGradientLayer*)onboardingGradientFromView:(UIView*)view
 {
     CAGradientLayer *gradient = [CAGradientLayer layer];
@@ -42,6 +54,23 @@
 + (UIFont*)onboardingFont
 {
     return [UIFont fontWithName:@"AvenirNext-Medium" size:18.0f];
+}
+
++ (CGRect)areaCarouselRect
+{
+    CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width;
+    CGFloat screenHeight = [UIScreen mainScreen].bounds.size.height;
+    CGFloat areaCarouselY = screenHeight - kAreaCarouselHeight;
+    
+    return CGRectMake(0.0f, areaCarouselY, screenWidth, kAreaCarouselHeight);
+}
+
++ (CGRect)locationCarouselRect
+{
+    CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width;
+    CGFloat locationCarouselHeight = kAreaCarouselHeight - kLocationCarouselHeight;
+    
+    return CGRectMake(0.0f, 120.0f, screenWidth, 300.0f);
 }
 
 @end

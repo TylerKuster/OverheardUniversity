@@ -41,8 +41,9 @@
         [self hopTo:@"register" then:next];
     }
     else {
-        NSLog(@"CHANGE THIS");
-        [self hopTo:@"register" then:next];
+//        [self unhop];
+        // TODO: set up onboarding and unhop to get back to the main view
+//        [self hopTo:@"onboarding" then:next];
         next();
     }
 }
