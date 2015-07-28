@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E7f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Qai-Up-MQs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Qai-Up-MQs">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
@@ -199,10 +199,10 @@
             </objects>
             <point key="canvasLocation" x="1986" y="413"/>
         </scene>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="FxK-Ge-Vlw">
             <objects>
-                <viewController storyboardIdentifier="map" id="ifN-bg-iU0" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="map" id="ifN-bg-iU0" customClass="OUMainViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jn2-cv-F93"/>
                         <viewControllerLayoutGuide type="bottom" id="BhR-xF-ghF"/>
@@ -210,7 +210,54 @@
                     <view key="view" contentMode="scaleToFill" id="Vg6-31-aaP">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="rmF-tc-6Sh">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <connections>
+                                    <outlet property="delegate" destination="ifN-bg-iU0" id="uWl-3H-GW4"/>
+                                </connections>
+                            </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UH4-gD-nr7">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="145" y="178" width="42" height="21"/>
+                                </variation>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="0.54437112808227539" green="0.079543672502040863" blue="0.68148082494735718" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="rmF-tc-6Sh" firstAttribute="leading" secondItem="Vg6-31-aaP" secondAttribute="leading" id="50E-U7-nkq"/>
+                            <constraint firstAttribute="centerY" secondItem="rmF-tc-6Sh" secondAttribute="centerY" id="9lE-5x-xiN"/>
+                            <constraint firstItem="rmF-tc-6Sh" firstAttribute="top" secondItem="Vg6-31-aaP" secondAttribute="top" id="VzC-o4-nST"/>
+                            <constraint firstAttribute="centerX" secondItem="rmF-tc-6Sh" secondAttribute="centerX" id="b3G-vr-P1j"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="rmF-tc-6Sh"/>
+                                <exclude reference="UH4-gD-nr7"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="50E-U7-nkq"/>
+                                <exclude reference="9lE-5x-xiN"/>
+                                <exclude reference="VzC-o4-nST"/>
+                                <exclude reference="b3G-vr-P1j"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="rmF-tc-6Sh"/>
+                                <include reference="UH4-gD-nr7"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="50E-U7-nkq"/>
+                                <include reference="9lE-5x-xiN"/>
+                                <include reference="VzC-o4-nST"/>
+                                <include reference="b3G-vr-P1j"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MUi-0N-lmm" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -561,57 +608,34 @@ first confirm a valid university email</string>
                                     <constraint firstItem="NOJ-sq-DBc" firstAttribute="top" secondItem="yC8-a5-V2J" secondAttribute="top" constant="2" id="coh-Lq-xTf"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jc6-Ab-RUl" userLabel="CampusCarousel" customClass="OUCampusCarousel">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="jc6-Ab-RUl" secondAttribute="trailing" id="3na-cN-snz"/>
-                            <constraint firstAttribute="bottom" secondItem="jc6-Ab-RUl" secondAttribute="bottom" constant="220" id="7dq-TR-b01">
-                                <variation key="widthClass=compact" constant="0.0"/>
-                            </constraint>
                             <constraint firstItem="yC8-a5-V2J" firstAttribute="top" secondItem="1Cp-32-Lva" secondAttribute="top" id="KBp-RV-m2W"/>
-                            <constraint firstItem="jc6-Ab-RUl" firstAttribute="top" secondItem="1Cp-32-Lva" secondAttribute="top" constant="80" id="PXE-E0-Vcl"/>
-                            <constraint firstItem="jc6-Ab-RUl" firstAttribute="leading" secondItem="1Cp-32-Lva" secondAttribute="leading" id="Rf8-OW-Qzp"/>
                             <constraint firstAttribute="trailing" secondItem="yC8-a5-V2J" secondAttribute="trailing" id="VCT-18-aLZ"/>
                             <constraint firstItem="yC8-a5-V2J" firstAttribute="leading" secondItem="1Cp-32-Lva" secondAttribute="leading" id="c3g-JQ-M15"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="yC8-a5-V2J"/>
-                                <exclude reference="jc6-Ab-RUl"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="KBp-RV-m2W"/>
                                 <exclude reference="VCT-18-aLZ"/>
                                 <exclude reference="c3g-JQ-M15"/>
-                                <exclude reference="3na-cN-snz"/>
-                                <exclude reference="7dq-TR-b01"/>
-                                <exclude reference="PXE-E0-Vcl"/>
-                                <exclude reference="Rf8-OW-Qzp"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="yC8-a5-V2J"/>
-                                <include reference="jc6-Ab-RUl"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="KBp-RV-m2W"/>
                                 <include reference="VCT-18-aLZ"/>
                                 <include reference="c3g-JQ-M15"/>
-                                <include reference="3na-cN-snz"/>
-                                <include reference="7dq-TR-b01"/>
-                                <include reference="PXE-E0-Vcl"/>
-                                <include reference="Rf8-OW-Qzp"/>
                             </mask>
                         </variation>
                     </view>
-                    <connections>
-                        <outlet property="campusCarousel" destination="jc6-Ab-RUl" id="lxa-NZ-D1C"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cCX-2e-glR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

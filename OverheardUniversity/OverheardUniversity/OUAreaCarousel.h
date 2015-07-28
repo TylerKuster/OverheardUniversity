@@ -8,6 +8,16 @@
 
 #import "iCarousel.h"
 
+@class OUAreaCarousel;
+
+@protocol OUAreaCarouselDelegate <NSObject>
+- (void)carouselIsScrolling:(OUAreaCarousel*)aCarousel;
+- (void)carouselEndedScrolling:(OUAreaCarousel*)aCarousel;
+
+@end
+
 @interface OUAreaCarousel : iCarousel
+
+@property (weak, nonatomic) id<OUAreaCarouselDelegate> areaCarouselDelegate;
 
 @end

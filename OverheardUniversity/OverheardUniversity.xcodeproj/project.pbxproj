@@ -45,9 +45,12 @@
 		46605F421B143D3A005D4BF2 /* OUEmailButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 46605F411B143D3A005D4BF2 /* OUEmailButton.m */; };
 		46605F481B1442DB005D4BF2 /* OUProgressBarTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 46605F471B1442DB005D4BF2 /* OUProgressBarTextField.m */; };
 		46605F4B1B1454BB005D4BF2 /* OUOnboardingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46605F4A1B1454BB005D4BF2 /* OUOnboardingViewController.m */; };
+		466E5BC01B4B98A1004904EB /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 466E5BBF1B4B98A1004904EB /* MapKit.framework */; };
 		46B805D21B003B490003D184 /* OUConversationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46B805D11B003B490003D184 /* OUConversationViewController.m */; };
 		46B805D51B0044050003D184 /* DemoModelData.m in Sources */ = {isa = PBXBuildFile; fileRef = 46B805D41B0044050003D184 /* DemoModelData.m */; };
 		46B805D81B0044720003D184 /* NSUserDefaults+DemoSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 46B805D71B0044720003D184 /* NSUserDefaults+DemoSettings.m */; };
+		46BEABA11B67245600697B89 /* OUMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46BEABA01B67245600697B89 /* OUMainViewController.m */; };
+		46BEABA51B674E2400697B89 /* OUConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 46BEABA41B674E2400697B89 /* OUConstants.m */; };
 		46D58E0E1B2E4B2000E1B1A7 /* OUActionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 46D58E0D1B2E4B2000E1B1A7 /* OUActionView.m */; };
 		46FF84851AAD306C0003FD29 /* TestSplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46FF84841AAD306C0003FD29 /* TestSplashViewController.m */; };
 		46FF84881AAD30880003FD29 /* TestOnboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46FF84871AAD30880003FD29 /* TestOnboardViewController.m */; };
@@ -127,12 +130,18 @@
 		46605F471B1442DB005D4BF2 /* OUProgressBarTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OUProgressBarTextField.m; sourceTree = "<group>"; };
 		46605F491B1454BB005D4BF2 /* OUOnboardingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OUOnboardingViewController.h; sourceTree = "<group>"; };
 		46605F4A1B1454BB005D4BF2 /* OUOnboardingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OUOnboardingViewController.m; sourceTree = "<group>"; };
+		466E5BBF1B4B98A1004904EB /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		46B805D01B003B490003D184 /* OUConversationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OUConversationViewController.h; sourceTree = "<group>"; };
 		46B805D11B003B490003D184 /* OUConversationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OUConversationViewController.m; sourceTree = "<group>"; };
 		46B805D31B0044050003D184 /* DemoModelData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoModelData.h; sourceTree = "<group>"; };
 		46B805D41B0044050003D184 /* DemoModelData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoModelData.m; sourceTree = "<group>"; };
 		46B805D61B0044720003D184 /* NSUserDefaults+DemoSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+DemoSettings.h"; sourceTree = "<group>"; };
 		46B805D71B0044720003D184 /* NSUserDefaults+DemoSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+DemoSettings.m"; sourceTree = "<group>"; };
+		46BEAB9F1B67245600697B89 /* OUMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OUMainViewController.h; sourceTree = "<group>"; };
+		46BEABA01B67245600697B89 /* OUMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OUMainViewController.m; sourceTree = "<group>"; };
+		46BEABA21B674D0000697B89 /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
+		46BEABA31B674E0700697B89 /* OUConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OUConstants.h; sourceTree = "<group>"; };
+		46BEABA41B674E2400697B89 /* OUConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OUConstants.m; sourceTree = "<group>"; };
 		46D58E0C1B2E4B2000E1B1A7 /* OUActionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OUActionView.h; sourceTree = "<group>"; };
 		46D58E0D1B2E4B2000E1B1A7 /* OUActionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OUActionView.m; sourceTree = "<group>"; };
 		46FF84831AAD306C0003FD29 /* TestSplashViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestSplashViewController.h; sourceTree = "<group>"; };
@@ -147,6 +156,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				466E5BC01B4B98A1004904EB /* MapKit.framework in Frameworks */,
 				460451861B218B7500F3FFA3 /* CoreLocation.framework in Frameworks */,
 				E099ED6764F750CDBFCEB62F /* libPods-OverheardUniversity.a in Frameworks */,
 			);
@@ -295,10 +305,14 @@
 				461BDCC71AA411C400B52624 /* Main.storyboard */,
 				463A6B221AEDE15B00557FA3 /* OUNavigationViewController.h */,
 				463A6B231AEDE15B00557FA3 /* OUNavigationViewController.m */,
+				46BEAB9F1B67245600697B89 /* OUMainViewController.h */,
+				46BEABA01B67245600697B89 /* OUMainViewController.m */,
 				460451811B21859900F3FFA3 /* OUTheme.h */,
 				460451821B21859900F3FFA3 /* OUTheme.m */,
 				46D58E0C1B2E4B2000E1B1A7 /* OUActionView.h */,
 				46D58E0D1B2E4B2000E1B1A7 /* OUActionView.m */,
+				46BEABA31B674E0700697B89 /* OUConstants.h */,
+				46BEABA41B674E2400697B89 /* OUConstants.m */,
 				4613E3281B49F55B009B80CD /* Carousels */,
 				460451521B216E3600F3FFA3 /* Onboarding */,
 				46605F401B143D3A005D4BF2 /* OUEmailButton.h */,
@@ -324,6 +338,7 @@
 			children = (
 				461BDCBE1AA411C400B52624 /* Info.plist */,
 				461BDCBF1AA411C400B52624 /* main.m */,
+				46BEABA21B674D0000697B89 /* Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -357,6 +372,7 @@
 		A1D0015F3DEE10A4BEBDD24D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				466E5BBF1B4B98A1004904EB /* MapKit.framework */,
 				460451851B218B7500F3FFA3 /* CoreLocation.framework */,
 				2E092EBB8F174924EFCA0710 /* libPods-OverheardUniversity.a */,
 			);
@@ -536,6 +552,7 @@
 				46605F481B1442DB005D4BF2 /* OUProgressBarTextField.m in Sources */,
 				46FF84851AAD306C0003FD29 /* TestSplashViewController.m in Sources */,
 				4604515E1B21724D00F3FFA3 /* SchoolListViewController.m in Sources */,
+				46BEABA51B674E2400697B89 /* OUConstants.m in Sources */,
 				460451891B21925900F3FFA3 /* SchoolGeolocator.m in Sources */,
 				460451831B21859900F3FFA3 /* OUTheme.m in Sources */,
 				463967A31AA6DE3F005EE13F /* OULogin.m in Sources */,
@@ -547,6 +564,7 @@
 				46605F391B13D473005D4BF2 /* THSpringyFlowLayout.m in Sources */,
 				46605F331B12AED9005D4BF2 /* RegisterViewController.m in Sources */,
 				4613E3271B49F54D009B80CD /* OUAreaCarousel.m in Sources */,
+				46BEABA11B67245600697B89 /* OUMainViewController.m in Sources */,
 				4613E3241B49F535009B80CD /* OULocationCarousel.m in Sources */,
 				461BDCC01AA411C400B52624 /* main.m in Sources */,
 				4604515D1B21724D00F3FFA3 /* OUSchoolCollectionViewCell.m in Sources */,

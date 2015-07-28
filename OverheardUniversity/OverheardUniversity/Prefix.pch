@@ -1,0 +1,17 @@
+//
+//  Prefix.pch
+//  overhearduniversity
+//
+//  Created by Tyler Kuster on 7/27/15.
+//  Copyright (c) 2015 Overheard University, LLC. All rights reserved.
+//
+
+#import <Availability.h>
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import <AVFoundation/AVFoundation.h>
+#import <MobileCoreServices/UTCoreTypes.h>
+#import <Parse/Parse.h>
+#import "OUCache.h"
+#import "OUConstants.h"
+#import "OUUtility.h"

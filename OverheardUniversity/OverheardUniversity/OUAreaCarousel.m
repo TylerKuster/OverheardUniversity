@@ -135,4 +135,14 @@ static const CGFloat kCarouselPeek = 40.0f;
     }
 }
 
+- (void)carouselWillBeginDragging:(iCarousel *)carousel
+{
+    [self.areaCarouselDelegate carouselIsScrolling:nil];
+}
+
+- (void)carouselDidEndDragging:(iCarousel *)carousel willDecelerate:(BOOL)decelerate
+{
+    [self.areaCarouselDelegate carouselEndedScrolling:nil];
+}
+
 @end
