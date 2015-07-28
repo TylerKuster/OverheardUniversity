@@ -128,7 +128,7 @@ static const CGFloat kTopBarHeight = 80.0f;
     UIViewController* viewController = [UIViewController new];
     viewController.view.backgroundColor = [UIColor orangeColor];
     
-    [self testPost];
+//    [self testPost];
     
     return [[TTSlidingPage alloc] initWithContentViewController: viewController];
 }
@@ -163,61 +163,61 @@ static const CGFloat kTopBarHeight = 80.0f;
     return title;
 }
 
-- (void)testPost
-{
-    // create a photo object
-    PFObject *post = [PFObject objectWithClassName:kPAPPhotoClassKey];
-    [photo setObject:[PFUser currentUser] forKey:kPAPPhotoUserKey];
-    [photo setObject:self.photoFile forKey:kPAPPhotoPictureKey];
-    [photo setObject:self.thumbnailFile forKey:kPAPPhotoThumbnailKey];
-    
-    // photos are public, but may only be modified by the user who uploaded them
-    PFACL *photoACL = [PFACL ACLWithUser:[PFUser currentUser]];
-    [photoACL setPublicReadAccess:YES];
-    photo.ACL = photoACL;
-    
-    // Request a background execution task to allow us to finish uploading the photo even if the app is backgrounded
-    self.photoPostBackgroundTaskId = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:^{
-        [[UIApplication sharedApplication] endBackgroundTask:self.photoPostBackgroundTaskId];
-    }];
-    
-    // save
-    [photo saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        if (succeeded) {
-            NSLog(@"Photo uploaded");
-            
-            [[PAPCache sharedCache] setAttributesForPhoto:photo likers:[NSArray array] commenters:[NSArray array] likedByCurrentUser:NO];
-            
-            // userInfo might contain any caption which might have been posted by the uploader
-            if (userInfo) {
-                NSString *commentText = [userInfo objectForKey:kPAPEditPhotoViewControllerUserInfoCommentKey];
-                
-                if (commentText && commentText.length != 0) {
-                    // create and save photo caption
-                    PFObject *comment = [PFObject objectWithClassName:kPAPActivityClassKey];
-                    [comment setObject:kPAPActivityTypeComment forKey:kPAPActivityTypeKey];
-                    [comment setObject:photo forKey:kPAPActivityPhotoKey];
-                    [comment setObject:[PFUser currentUser] forKey:kPAPActivityFromUserKey];
-                    [comment setObject:[PFUser currentUser] forKey:kPAPActivityToUserKey];
-                    [comment setObject:commentText forKey:kPAPActivityContentKey];
-                    
-                    PFACL *ACL = [PFACL ACLWithUser:[PFUser currentUser]];
-                    [ACL setPublicReadAccess:YES];
-                    comment.ACL = ACL;
-                    
-                    [comment saveEventually];
-                    [[PAPCache sharedCache] incrementCommentCountForPhoto:photo];
-                }
-            }
-            
-            [[NSNotificationCenter defaultCenter] postNotificationName:PAPTabBarControllerDidFinishEditingPhotoNotification object:photo];
-        } else {
-            NSLog(@"Photo failed to save: %@", error);
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Couldn't post your photo" message:nil delegate:nil cancelButtonTitle:nil otherButtonTitles:@"Dismiss", nil];
-            [alert show];
-        }
-        [[UIApplication sharedApplication] endBackgroundTask:self.photoPostBackgroundTaskId];
-    }];
-}
-
+//- (void)testPost
+//{
+//    // create a photo object
+//    PFObject *post = [PFObject objectWithClassName:kPAPPhotoClassKey];
+//    [photo setObject:[PFUser currentUser] forKey:kPAPPhotoUserKey];
+//    [photo setObject:self.photoFile forKey:kPAPPhotoPictureKey];
+//    [photo setObject:self.thumbnailFile forKey:kPAPPhotoThumbnailKey];
+//    
+//    // photos are public, but may only be modified by the user who uploaded them
+//    PFACL *photoACL = [PFACL ACLWithUser:[PFUser currentUser]];
+//    [photoACL setPublicReadAccess:YES];
+//    photo.ACL = photoACL;
+//    
+//    // Request a background execution task to allow us to finish uploading the photo even if the app is backgrounded
+//    self.photoPostBackgroundTaskId = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:^{
+//        [[UIApplication sharedApplication] endBackgroundTask:self.photoPostBackgroundTaskId];
+//    }];
+//    
+//    // save
+//    [photo saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+//        if (succeeded) {
+//            NSLog(@"Photo uploaded");
+//            
+//            [[PAPCache sharedCache] setAttributesForPhoto:photo likers:[NSArray array] commenters:[NSArray array] likedByCurrentUser:NO];
+//            
+//            // userInfo might contain any caption which might have been posted by the uploader
+//            if (userInfo) {
+//                NSString *commentText = [userInfo objectForKey:kPAPEditPhotoViewControllerUserInfoCommentKey];
+//                
+//                if (commentText && commentText.length != 0) {
+//                    // create and save photo caption
+//                    PFObject *comment = [PFObject objectWithClassName:kPAPActivityClassKey];
+//                    [comment setObject:kPAPActivityTypeComment forKey:kPAPActivityTypeKey];
+//                    [comment setObject:photo forKey:kPAPActivityPhotoKey];
+//                    [comment setObject:[PFUser currentUser] forKey:kPAPActivityFromUserKey];
+//                    [comment setObject:[PFUser currentUser] forKey:kPAPActivityToUserKey];
+//                    [comment setObject:commentText forKey:kPAPActivityContentKey];
+//                    
+//                    PFACL *ACL = [PFACL ACLWithUser:[PFUser currentUser]];
+//                    [ACL setPublicReadAccess:YES];
+//                    comment.ACL = ACL;
+//                    
+//                    [comment saveEventually];
+//                    [[PAPCache sharedCache] incrementCommentCountForPhoto:photo];
+//                }
+//            }
+//            
+//            [[NSNotificationCenter defaultCenter] postNotificationName:PAPTabBarControllerDidFinishEditingPhotoNotification object:photo];
+//        } else {
+//            NSLog(@"Photo failed to save: %@", error);
+//            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Couldn't post your photo" message:nil delegate:nil cancelButtonTitle:nil otherButtonTitles:@"Dismiss", nil];
+//            [alert show];
+//        }
+//        [[UIApplication sharedApplication] endBackgroundTask:self.photoPostBackgroundTaskId];
+//    }];
+//}
+//
 @end

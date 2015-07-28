@@ -6,8 +6,6 @@
 //  Copyright (c) 2015 Overheard University, LLC. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-
 typedef enum {
     OUHomeNavItemIndex = 0,
     OUEmptyNavItemIndex = 1,

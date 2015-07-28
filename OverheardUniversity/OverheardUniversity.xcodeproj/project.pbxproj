@@ -39,6 +39,10 @@
 		461BDCDA1AA411C400B52624 /* OverheardUniversityTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 461BDCD91AA411C400B52624 /* OverheardUniversityTests.m */; };
 		463967A31AA6DE3F005EE13F /* OULogin.m in Sources */ = {isa = PBXBuildFile; fileRef = 463967A21AA6DE3F005EE13F /* OULogin.m */; };
 		463A6B241AEDE15B00557FA3 /* OUNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 463A6B231AEDE15B00557FA3 /* OUNavigationViewController.m */; };
+		46510F501B676871005FB78A /* UIImage+AlphaAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 46510F4B1B676871005FB78A /* UIImage+AlphaAdditions.m */; };
+		46510F511B676871005FB78A /* UIImage+ResizeAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 46510F4D1B676871005FB78A /* UIImage+ResizeAdditions.m */; };
+		46510F521B676871005FB78A /* UIImage+RoundedCornerAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 46510F4F1B676871005FB78A /* UIImage+RoundedCornerAdditions.m */; };
+		46510F561B676BB1005FB78A /* OUCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 46510F551B676BB1005FB78A /* OUCache.m */; };
 		46592AFA1AAAFDD90018B48E /* OUViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46592AF91AAAFDD90018B48E /* OUViewController.m */; };
 		46605F331B12AED9005D4BF2 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46605F321B12AED9005D4BF2 /* RegisterViewController.m */; };
 		46605F391B13D473005D4BF2 /* THSpringyFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 46605F381B13D473005D4BF2 /* THSpringyFlowLayout.m */; };
@@ -51,6 +55,7 @@
 		46B805D81B0044720003D184 /* NSUserDefaults+DemoSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 46B805D71B0044720003D184 /* NSUserDefaults+DemoSettings.m */; };
 		46BEABA11B67245600697B89 /* OUMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46BEABA01B67245600697B89 /* OUMainViewController.m */; };
 		46BEABA51B674E2400697B89 /* OUConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 46BEABA41B674E2400697B89 /* OUConstants.m */; };
+		46BEABA81B675C0D00697B89 /* OUUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 46BEABA71B675C0D00697B89 /* OUUtility.m */; };
 		46D58E0E1B2E4B2000E1B1A7 /* OUActionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 46D58E0D1B2E4B2000E1B1A7 /* OUActionView.m */; };
 		46FF84851AAD306C0003FD29 /* TestSplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46FF84841AAD306C0003FD29 /* TestSplashViewController.m */; };
 		46FF84881AAD30880003FD29 /* TestOnboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46FF84871AAD30880003FD29 /* TestOnboardViewController.m */; };
@@ -118,6 +123,14 @@
 		463967A21AA6DE3F005EE13F /* OULogin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OULogin.m; sourceTree = "<group>"; };
 		463A6B221AEDE15B00557FA3 /* OUNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OUNavigationViewController.h; sourceTree = "<group>"; };
 		463A6B231AEDE15B00557FA3 /* OUNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OUNavigationViewController.m; sourceTree = "<group>"; };
+		46510F4A1B676871005FB78A /* UIImage+AlphaAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+AlphaAdditions.h"; path = "OverheardUniversity/UIImage+AlphaAdditions.h"; sourceTree = "<group>"; };
+		46510F4B1B676871005FB78A /* UIImage+AlphaAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+AlphaAdditions.m"; path = "OverheardUniversity/UIImage+AlphaAdditions.m"; sourceTree = "<group>"; };
+		46510F4C1B676871005FB78A /* UIImage+ResizeAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+ResizeAdditions.h"; path = "OverheardUniversity/UIImage+ResizeAdditions.h"; sourceTree = "<group>"; };
+		46510F4D1B676871005FB78A /* UIImage+ResizeAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+ResizeAdditions.m"; path = "OverheardUniversity/UIImage+ResizeAdditions.m"; sourceTree = "<group>"; };
+		46510F4E1B676871005FB78A /* UIImage+RoundedCornerAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+RoundedCornerAdditions.h"; path = "OverheardUniversity/UIImage+RoundedCornerAdditions.h"; sourceTree = "<group>"; };
+		46510F4F1B676871005FB78A /* UIImage+RoundedCornerAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+RoundedCornerAdditions.m"; path = "OverheardUniversity/UIImage+RoundedCornerAdditions.m"; sourceTree = "<group>"; };
+		46510F541B676BB1005FB78A /* OUCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OUCache.h; sourceTree = "<group>"; };
+		46510F551B676BB1005FB78A /* OUCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OUCache.m; sourceTree = "<group>"; };
 		46592AF81AAAFDD90018B48E /* OUViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OUViewController.h; sourceTree = "<group>"; };
 		46592AF91AAAFDD90018B48E /* OUViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OUViewController.m; sourceTree = "<group>"; };
 		46605F311B12AED9005D4BF2 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
@@ -142,6 +155,8 @@
 		46BEABA21B674D0000697B89 /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
 		46BEABA31B674E0700697B89 /* OUConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OUConstants.h; sourceTree = "<group>"; };
 		46BEABA41B674E2400697B89 /* OUConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OUConstants.m; sourceTree = "<group>"; };
+		46BEABA61B675C0D00697B89 /* OUUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OUUtility.h; sourceTree = "<group>"; };
+		46BEABA71B675C0D00697B89 /* OUUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OUUtility.m; sourceTree = "<group>"; };
 		46D58E0C1B2E4B2000E1B1A7 /* OUActionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OUActionView.h; sourceTree = "<group>"; };
 		46D58E0D1B2E4B2000E1B1A7 /* OUActionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OUActionView.m; sourceTree = "<group>"; };
 		46FF84831AAD306C0003FD29 /* TestSplashViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestSplashViewController.h; sourceTree = "<group>"; };
@@ -313,6 +328,10 @@
 				46D58E0D1B2E4B2000E1B1A7 /* OUActionView.m */,
 				46BEABA31B674E0700697B89 /* OUConstants.h */,
 				46BEABA41B674E2400697B89 /* OUConstants.m */,
+				46BEABA61B675C0D00697B89 /* OUUtility.h */,
+				46BEABA71B675C0D00697B89 /* OUUtility.m */,
+				46510F541B676BB1005FB78A /* OUCache.h */,
+				46510F551B676BB1005FB78A /* OUCache.m */,
 				4613E3281B49F55B009B80CD /* Carousels */,
 				460451521B216E3600F3FFA3 /* Onboarding */,
 				46605F401B143D3A005D4BF2 /* OUEmailButton.h */,
@@ -360,6 +379,19 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		46510F531B6769A6005FB78A /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				46510F4A1B676871005FB78A /* UIImage+AlphaAdditions.h */,
+				46510F4B1B676871005FB78A /* UIImage+AlphaAdditions.m */,
+				46510F4C1B676871005FB78A /* UIImage+ResizeAdditions.h */,
+				46510F4D1B676871005FB78A /* UIImage+ResizeAdditions.m */,
+				46510F4E1B676871005FB78A /* UIImage+RoundedCornerAdditions.h */,
+				46510F4F1B676871005FB78A /* UIImage+RoundedCornerAdditions.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
 		9045E4884F27A5EF526CCC7F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -372,6 +404,7 @@
 		A1D0015F3DEE10A4BEBDD24D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				46510F531B6769A6005FB78A /* Categories */,
 				466E5BBF1B4B98A1004904EB /* MapKit.framework */,
 				460451851B218B7500F3FFA3 /* CoreLocation.framework */,
 				2E092EBB8F174924EFCA0710 /* libPods-OverheardUniversity.a */,
@@ -546,6 +579,8 @@
 			files = (
 				46605F4B1B1454BB005D4BF2 /* OUOnboardingViewController.m in Sources */,
 				461BDCC61AA411C400B52624 /* LoginViewController.m in Sources */,
+				46BEABA81B675C0D00697B89 /* OUUtility.m in Sources */,
+				46510F511B676871005FB78A /* UIImage+ResizeAdditions.m in Sources */,
 				46D58E0E1B2E4B2000E1B1A7 /* OUActionView.m in Sources */,
 				463A6B241AEDE15B00557FA3 /* OUNavigationViewController.m in Sources */,
 				46605F421B143D3A005D4BF2 /* OUEmailButton.m in Sources */,
@@ -557,6 +592,7 @@
 				460451831B21859900F3FFA3 /* OUTheme.m in Sources */,
 				463967A31AA6DE3F005EE13F /* OULogin.m in Sources */,
 				4613E3211B49F2A7009B80CD /* OUCampusCarousel.m in Sources */,
+				46510F521B676871005FB78A /* UIImage+RoundedCornerAdditions.m in Sources */,
 				460451551B216E5F00F3FFA3 /* LocationRequestViewController.m in Sources */,
 				461BDCC31AA411C400B52624 /* AppDelegate.m in Sources */,
 				46FF84881AAD30880003FD29 /* TestOnboardViewController.m in Sources */,
@@ -568,6 +604,8 @@
 				4613E3241B49F535009B80CD /* OULocationCarousel.m in Sources */,
 				461BDCC01AA411C400B52624 /* main.m in Sources */,
 				4604515D1B21724D00F3FFA3 /* OUSchoolCollectionViewCell.m in Sources */,
+				46510F501B676871005FB78A /* UIImage+AlphaAdditions.m in Sources */,
+				46510F561B676BB1005FB78A /* OUCache.m in Sources */,
 				46B805D51B0044050003D184 /* DemoModelData.m in Sources */,
 				46B805D81B0044720003D184 /* NSUserDefaults+DemoSettings.m in Sources */,
 				46592AFA1AAAFDD90018B48E /* OUViewController.m in Sources */,
@@ -635,6 +673,8 @@
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = /Users/Digit0w1/Development/iOS/OverheardUniversity/OverheardUniversityiOS/OverheardUniversity/OverheardUniversity/Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -676,6 +716,8 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = /Users/Digit0w1/Development/iOS/OverheardUniversity/OverheardUniversityiOS/OverheardUniversity/OverheardUniversity/Prefix.pch;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
