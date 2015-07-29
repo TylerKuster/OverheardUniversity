@@ -11,7 +11,7 @@
 #import <Foundation/Foundation.h>
 #import <AVFoundation/AVFoundation.h>
 #import <MobileCoreServices/UTCoreTypes.h>
-//#import <Parse/Parse.h>
+#import <Parse/Parse.h>
 #import "OUCache.h"
 #import "OUConstants.h"
 #import "OUUtility.h"
