@@ -7,11 +7,23 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate, /*PFLogInViewControllerDelegate, PF_FBRequestDelegate,*/ NSURLConnectionDataDelegate, UITabBarControllerDelegate>
 
-@property (strong, nonatomic) UIWindow *window;
+@property (nonatomic, strong) UIWindow *window;
 
+//@property (nonatomic, strong) PAPTabBarController *tabBarController;
+@property (nonatomic, strong) UINavigationController *navController;
+
+@property (nonatomic, readonly) int networkStatus;
+
+- (BOOL)isParseReachable;
+
+- (void)presentLoginViewController;
+- (void)presentLoginViewControllerAnimated:(BOOL)animated;
+- (void)presentTabBarController;
+
+- (void)logOut;
 
 @end
-
