@@ -14,6 +14,8 @@ PODS:
     - JSQSystemSoundPlayer (~> 2.0.1)
   - JSQSystemSoundPlayer (2.0.1)
   - Onboard (2.1.5)
+  - Parse (1.7.5.3):
+    - Bolts/Tasks (>= 1.2.0)
   - TOMSMorphingLabel (0.5.1)
   - UIScrollSlidingPages (1.4)
 
@@ -24,6 +26,7 @@ DEPENDENCIES:
   - iCarousel (= 1.7.6)
   - JSQMessagesViewController
   - Onboard
+  - Parse (~> 1.1)
   - TOMSMorphingLabel (~> 0.5)
   - UIScrollSlidingPages (~> 1.3)
 
@@ -36,6 +39,7 @@ SPEC CHECKSUMS:
   JSQMessagesViewController: ca11f86fa68ca70835f05e169df9244147c1dc40
   JSQSystemSoundPlayer: c5850e77a4363ffd374cd851154b9af93264ed8d
   Onboard: c58adaef5a377b0c45b4754c5cbe17d4627898c7
+  Parse: 373adbb1ad2e34d383542c3b28f678c49ebe4881
   TOMSMorphingLabel: 3e88a2bf5257f8993ebc51fb3109187a0bfb2c4d
   UIScrollSlidingPages: 92a3ed2c444b31f7f1b259f7b91720b53295346a
 
