@@ -1,0 +1,42 @@
+PODS:
+  - Bolts (1.2.0):
+    - Bolts/AppLinks (= 1.2.0)
+    - Bolts/Tasks (= 1.2.0)
+  - Bolts/AppLinks (1.2.0):
+    - Bolts/Tasks
+  - Bolts/Tasks (1.2.0)
+  - CLHoppingViewController (0.1.5)
+  - ECSlidingViewController (2.0.3)
+  - Facebook-iOS-SDK (3.23.2):
+    - Bolts (~> 1.0)
+  - iCarousel (1.7.6)
+  - JSQMessagesViewController (7.1.0):
+    - JSQSystemSoundPlayer (~> 2.0.1)
+  - JSQSystemSoundPlayer (2.0.1)
+  - Onboard (2.1.5)
+  - TOMSMorphingLabel (0.5.1)
+  - UIScrollSlidingPages (1.4)
+
+DEPENDENCIES:
+  - CLHoppingViewController
+  - ECSlidingViewController (~> 2.0.2)
+  - Facebook-iOS-SDK (~> 3.23.0)
+  - iCarousel (= 1.7.6)
+  - JSQMessagesViewController
+  - Onboard
+  - TOMSMorphingLabel (~> 0.5)
+  - UIScrollSlidingPages (~> 1.3)
+
+SPEC CHECKSUMS:
+  Bolts: d176cb1e0012175589e389a9db49b85e27787576
+  CLHoppingViewController: b294128bc2257c2172d4462a83756f466197a303
+  ECSlidingViewController: 6485c14f23b4487e9946535421ca8f111f86cc53
+  Facebook-iOS-SDK: cd87f0b2f0c1d9574b44e8fa2baacc275524bac3
+  iCarousel: ddd7f142c7c2f3429b0ce5fb8ea37f4a059394cd
+  JSQMessagesViewController: ca11f86fa68ca70835f05e169df9244147c1dc40
+  JSQSystemSoundPlayer: c5850e77a4363ffd374cd851154b9af93264ed8d
+  Onboard: c58adaef5a377b0c45b4754c5cbe17d4627898c7
+  TOMSMorphingLabel: 3e88a2bf5257f8993ebc51fb3109187a0bfb2c4d
+  UIScrollSlidingPages: 92a3ed2c444b31f7f1b259f7b91720b53295346a
+
+COCOAPODS: 0.37.2
