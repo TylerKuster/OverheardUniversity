@@ -10,13 +10,14 @@
 
 #import "AppDelegate.h"
 
+#import "OUConstants.h"
 #import "Reachability.h"
 #import "MBProgressHUD.h"
-//#import "PAPHomeViewController.h"
+#import "OUHomeViewController.h"
 //#import "PAPLogInViewController.h"
 #import "UIImage+ResizeAdditions.h"
 //#import "PAPAccountViewController.h"
-//#import "PAPWelcomeViewController.h"
+#import "OUWelcomeViewController.h"
 //#import "PAPActivityFeedViewController.h"
 //#import "PAPPhotoDetailsViewController.h"
 
@@ -44,8 +45,8 @@
 @implementation AppDelegate
 
 @synthesize window;
-//@synthesize navController;
-//@synthesize tabBarController;
+@synthesize navController;
+@synthesize tabBarController;
 //@synthesize networkStatus;
 //
 //@synthesize homeViewController;
@@ -90,9 +91,10 @@
     [self monitorReachability];
     
 //    self.welcomeViewController = [[PAPWelcomeViewController alloc] init];
+    self.tabBarController = [[OUTabBarController alloc] init];
     
-//    self.navController = [[UINavigationController alloc] initWithRootViewController:self.welcomeViewController];
-//    self.navController.navigationBarHidden = YES;
+    self.navController = [[UINavigationController alloc] initWithRootViewController:self.tabBarController];
+    self.navController.navigationBarHidden = YES;
     
     self.window.rootViewController = self.navController;
     [self.window makeKeyAndVisible];
@@ -168,10 +170,10 @@
 
 #pragma mark - UITabBarControllerDelegate
 
-//- (BOOL)tabBarController:(UITabBarController *)aTabBarController shouldSelectViewController:(UIViewController *)viewController {
-//    // The empty UITabBarItem behind our Camera button should not load a view controller
-//    return ![viewController isEqual:[[aTabBarController viewControllers] objectAtIndex:PAPEmptyTabBarItemIndex]];
-//}
+- (BOOL)tabBarController:(UITabBarController *)aTabBarController shouldSelectViewController:(UIViewController *)viewController {
+    // The empty UITabBarItem behind our Camera button should not load a view controller
+    return ![viewController isEqual:[[aTabBarController viewControllers] objectAtIndex:OUEmptyNavItemIndex]];
+}
 
 
 #pragma mark - PFLoginViewController
@@ -322,14 +324,14 @@
     return self.networkStatus != NotReachable;
 }
 
-//- (void)presentLoginViewControllerAnimated:(BOOL)animated {
-//    PAPLogInViewController *loginViewController = [[PAPLogInViewController alloc] init];
-//    [loginViewController setDelegate:self];
-//    loginViewController.fields = PFLogInFieldsFacebook;
-//    loginViewController.facebookPermissions = [NSArray arrayWithObjects:@"user_about_me", nil];
-//    
-//    [self.welcomeViewController presentModalViewController:loginViewController animated:NO];
-//}
+- (void)presentLoginViewControllerAnimated:(BOOL)animated {
+    PAPLogInViewController *loginViewController = [[PAPLogInViewController alloc] init];
+    [loginViewController setDelegate:self];
+    loginViewController.fields = PFLogInFieldsFacebook;
+    loginViewController.facebookPermissions = [NSArray arrayWithObjects:@"user_about_me", nil];
+    
+    [self.welcomeViewController presentModalViewController:loginViewController animated:NO];
+}
 
 
 - (void)presentLoginViewController {
