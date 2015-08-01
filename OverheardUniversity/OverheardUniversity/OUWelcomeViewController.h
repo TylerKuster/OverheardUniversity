@@ -8,6 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+@class OUWelcomeViewController;
+
+@protocol OUWelcomeViewControllerDelegate <NSObject>
+- (void)presentLoginViewController;
+- (void)presentTabBar;
+- (void)logOut;
+
+@end
+
 @interface OUWelcomeViewController : UIViewController
+
+@property (weak, nonatomic) id<OUWelcomeViewControllerDelegate> delegate;
 
 @end

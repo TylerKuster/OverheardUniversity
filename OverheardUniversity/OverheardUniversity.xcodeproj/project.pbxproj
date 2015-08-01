@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4605E1281B6C654000C3E917 /* OUProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4605E1271B6C654000C3E917 /* OUProfileViewController.m */; };
 		460D611D1B69C919008D1894 /* OUTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 460D611C1B69C919008D1894 /* OUTabBarController.m */; };
 		466EF69F1B688CCE00D099BD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 466EF69E1B688CCE00D099BD /* main.m */; };
 		466EF6A21B688CCE00D099BD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 466EF6A11B688CCE00D099BD /* AppDelegate.m */; };
@@ -44,6 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4605E1261B6C654000C3E917 /* OUProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OUProfileViewController.h; sourceTree = "<group>"; };
+		4605E1271B6C654000C3E917 /* OUProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OUProfileViewController.m; sourceTree = "<group>"; };
 		460D611B1B69C919008D1894 /* OUTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OUTabBarController.h; path = Controllers/OUTabBarController.h; sourceTree = "<group>"; };
 		460D611C1B69C919008D1894 /* OUTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OUTabBarController.m; path = Controllers/OUTabBarController.m; sourceTree = "<group>"; };
 		466EF6991B688CCE00D099BD /* OverheardUniversity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OverheardUniversity.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -206,6 +209,8 @@
 				468A21501B6B27F500C4D204 /* OURegisterViewController.m */,
 				468A21521B6B280C00C4D204 /* OULogInViewController.h */,
 				468A21531B6B280C00C4D204 /* OULogInViewController.m */,
+				4605E1261B6C654000C3E917 /* OUProfileViewController.h */,
+				4605E1271B6C654000C3E917 /* OUProfileViewController.m */,
 				468A213F1B6B1EA500C4D204 /* OUHomeViewController.h */,
 				468A21401B6B1EA500C4D204 /* OUHomeViewController.m */,
 				460D611B1B69C919008D1894 /* OUTabBarController.h */,
@@ -411,6 +416,7 @@
 				466EF6CA1B688E8300D099BD /* OUUtility.m in Sources */,
 				466EF6D31B688F8C00D099BD /* UIImage+ResizeAdditions.m in Sources */,
 				468A21471B6B20DA00C4D204 /* OUBubbleViewController.m in Sources */,
+				4605E1281B6C654000C3E917 /* OUProfileViewController.m in Sources */,
 				468A213D1B6B1AD200C4D204 /* OULocationCarousel.m in Sources */,
 				466EF6D21B688F8C00D099BD /* UIImage+AlphaAdditions.m in Sources */,
 				460D611D1B69C919008D1894 /* OUTabBarController.m in Sources */,
