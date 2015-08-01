@@ -10,6 +10,7 @@
 
 #import "AppDelegate.h"
 #import "OUWelcomeViewController.h"
+#import "OUOnboardingViewController.h"
 
 @interface OUWelcomeViewController ()
 
@@ -20,22 +21,31 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor orangeColor];
+//    self.view.backgroundColor = [UIColor orangeColor];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    // If not logged in, present login view controller
-    if ([PFUser currentUser]) {
-        [(AppDelegate*)[[UIApplication sharedApplication] delegate] presentLoginViewControllerAnimated:NO];
-        return;
-    }
-    // Present Anypic UI
     [(AppDelegate*)[[UIApplication sharedApplication] delegate] presentTabBarController];
     
+    // If not logged in, present login view controller
+    if (![PFUser currentUser]) {
+//        OUOnboardingViewController *onboardingViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"onboardingVC"];
+        //    [loginViewController setDelegate:self];
+        //    loginViewController.fields = PFLogInFieldsFacebook;
+        //    loginViewController.facebookPermissions = [NSArray arrayWithObjects:@"user_about_me", nil];
+        self.tabBarController.selectedIndex = 0;
+//        [self.tabBarController presentViewController:onboardingViewController animated:NO completion:nil];
+        //[(AppDelegate*)[[UIApplication sharedApplication] delegate] presentOnboardingViewControllerAnimated:NO];
+        return;
+    }
+    
+    
+    
     // Refresh current user with server side data -- checks if user is still valid and so on
-    [[PFUser currentUser] fetchInBackgroundWithTarget:self selector:@selector(refreshCurrentUserCallbackWithResult:error:)];
+    [[PFUser currentUser] fetchInBackgroundWithTarget:self selector:@selector(fetchCurrentUserCallbackWithResult:error:)];
 }
 
 - (void)didReceiveMemoryWarning {

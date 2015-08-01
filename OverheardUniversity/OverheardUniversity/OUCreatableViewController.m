@@ -1,32 +1,22 @@
 //
-//  OUHomeViewController.m
+//  OUCreatableViewController.m
 //  OverheardUniversity
 //
-//  Created by Tyler Kuster on 7/30/15.
+//  Created by Tyler Kuster on 8/1/15.
 //  Copyright (c) 2015 OverheardUniversity. All rights reserved.
 //
 
-#import <MapKit/MapKit.h>
-#import "OUHomeViewController.h"
+#import "OUCreatableViewController.h"
 
-@interface OUHomeViewController () <MKMapViewDelegate>
-
-@property (nonatomic, weak) IBOutlet MKMapView* mapView;
+@interface OUCreatableViewController ()
 
 @end
 
-@implementation OUHomeViewController
+@implementation OUCreatableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-//    [self.view setBackgroundColor:[UIColor grayColor]];
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    
-    self.mapView.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning {

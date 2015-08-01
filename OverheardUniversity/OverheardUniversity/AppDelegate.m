@@ -15,12 +15,13 @@
 #import "OUCache.h"
 #import "Reachability.h"
 #import "MBProgressHUD.h"
-#import "OUHomeViewController.h"
-#import "OULogInViewController.h"
+//#import "OULogInViewController.h"
+#import "OUOnboardingViewController.h"
 #import "OURegisterViewController.h"
 #import "UIImage+ResizeAdditions.h"
 //#import "PAPAccountViewController.h"
 #import "OUWelcomeViewController.h"
+#import "OUHomeViewController.h"
 #import "OUProfileViewController.h"
 //#import "PAPPhotoDetailsViewController.h"
 
@@ -92,14 +93,18 @@
     
     // Use Reachability to monitor connectivity
     [self monitorReachability];
-    
-    self.welcomeViewController = [[OUWelcomeViewController alloc] init];
-    self.tabBarController = [[OUTabBarController alloc] init];
-    
-    self.navController = [[UINavigationController alloc] initWithRootViewController:self.welcomeViewController];
-    self.navController.navigationBarHidden = YES;
-    
-    self.window.rootViewController = self.navController;
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    self.tabBarController = [storyboard instantiateViewControllerWithIdentifier:@"tabBar"];
+    self.tabBarController.tabBar.hidden = YES;
+    self.welcomeViewController = /*[[OUWelcomeViewController alloc]init];*/[storyboard instantiateViewControllerWithIdentifier:@"welcomeVC"];
+    self.homeViewController = /*[[OUWelcomeViewController alloc]init];*/[storyboard instantiateViewControllerWithIdentifier:@"homeVC"];
+    self.profileViewController = /*[[OUWelcomeViewController alloc]init];*/[storyboard instantiateViewControllerWithIdentifier:@"profileVC"];
+
+    self.tabBarController.viewControllers = @[self.welcomeViewController, self.homeViewController, self.profileViewController];
+//    self.navController = [[UINavigationController alloc] initWithRootViewController:self.welcomeViewController];
+//    self.navController.navigationBarHidden = YES;
+//    
+    self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
     
     [self handlePush:launchOptions];
@@ -185,7 +190,7 @@
 
 #pragma mark - PFLoginViewController
 
-- (void)logInViewController:(OULogInViewController *)logInController didLogInUser:(PFUser *)user {
+- (void)logInViewController:(OUOnboardingViewController *)logInController didLogInUser:(PFUser *)user {
     // user has logged in - we need to fetch all of their Facebook data before we let them in
     if (![self shouldProceedToMainInterface:user]) {
         self.hud = [MBProgressHUD showHUDAddedTo:self.navController.presentedViewController.view animated:YES];
@@ -330,25 +335,27 @@
     return self.networkStatus != NotReachable;
 }
 
-- (void)presentLoginViewControllerAnimated:(BOOL)animated {
-    OULogInViewController *loginViewController = [[OULogInViewController   alloc] init];
+- (void)presentOnboardingViewControllerAnimated:(BOOL)animated {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    OUOnboardingViewController *onboardingViewController = [storyboard instantiateViewControllerWithIdentifier:@"onboardingVC"];
 //    [loginViewController setDelegate:self];
 //    loginViewController.fields = PFLogInFieldsFacebook;
 //    loginViewController.facebookPermissions = [NSArray arrayWithObjects:@"user_about_me", nil];
     
-    [self.welcomeViewController.view.window.rootViewController presentViewController:loginViewController animated:NO completion:nil];
+    [self.welcomeViewController/*.view.window.rootViewController*/ presentViewController:onboardingViewController animated:NO completion:nil];
 }
 
 
-- (void)presentLoginViewController {
-    [self presentLoginViewControllerAnimated:YES];
+- (void)presentOnboardingViewController {
+    [self presentOnboardingViewControllerAnimated:YES];
 }
 
 - (void)presentTabBarController {
-    self.tabBarController = [[OUTabBarController alloc] init];
-    self.homeViewController = [[OUHomeViewController alloc] init];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    self.tabBarController = [storyboard instantiateViewControllerWithIdentifier:@"tabBar"];
+    self.homeViewController = [storyboard instantiateViewControllerWithIdentifier:@"homeVC"];
     [self.homeViewController setFirstLaunch:firstLaunch];
-    self.profileViewController = [[OUProfileViewController alloc] init];
+    self.profileViewController = [storyboard instantiateViewControllerWithIdentifier:@"profileVC"];
     
     UINavigationController *homeNavigationController = [[UINavigationController alloc] initWithRootViewController:self.homeViewController];
     UINavigationController *emptyNavigationController = [[UINavigationController alloc] init];
@@ -397,7 +404,7 @@
     // clear out cached data, view controllers, etc
     [self.navController popToRootViewControllerAnimated:NO];
     
-    [self presentLoginViewController];
+    [self presentOnboardingViewController];
     
     self.homeViewController = nil;
     self.profileViewController = nil;
