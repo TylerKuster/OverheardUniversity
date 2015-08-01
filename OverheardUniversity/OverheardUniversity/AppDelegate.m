@@ -336,7 +336,7 @@
 //    loginViewController.fields = PFLogInFieldsFacebook;
 //    loginViewController.facebookPermissions = [NSArray arrayWithObjects:@"user_about_me", nil];
     
-    [self.welcomeViewController presentViewController:loginViewController animated:NO completion:nil];
+    [self.welcomeViewController.view.window.rootViewController presentViewController:loginViewController animated:NO completion:nil];
 }
 
 
@@ -352,32 +352,14 @@
     
     UINavigationController *homeNavigationController = [[UINavigationController alloc] initWithRootViewController:self.homeViewController];
     UINavigationController *emptyNavigationController = [[UINavigationController alloc] init];
-    UINavigationController *activityFeedNavigationController = [[UINavigationController alloc] initWithRootViewController:self.profileViewController];
+    UINavigationController *profileNavigationController = [[UINavigationController alloc] initWithRootViewController:self.profileViewController];
 
-    
-    UITabBarItem *homeTabBarItem = [[UITabBarItem alloc] initWithTitle:@"Home" image:nil tag:0];
-    [homeTabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"IconHomeSelected.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"IconHome.png"]];
-    [homeTabBarItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
-                                            [UIColor colorWithRed:86.0f/255.0f green:55.0f/255.0f blue:42.0f/255.0f alpha:1.0f], UITextAttributeTextColor,
-                                            nil] forState:UIControlStateNormal];
-    [homeTabBarItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
-                                            [UIColor colorWithRed:129.0f/255.0f green:99.0f/255.0f blue:69.0f/255.0f alpha:1.0f], UITextAttributeTextColor,
-                                            nil] forState:UIControlStateSelected];
-    
-    UITabBarItem *activityFeedTabBarItem = [[UITabBarItem alloc] initWithTitle:@"Activity" image:nil tag:0];
-    [activityFeedTabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"IconTimelineSelected.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"IconTimeline.png"]];
-    [activityFeedTabBarItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
-                                                    [UIColor colorWithRed:86.0f/255.0f green:55.0f/255.0f blue:42.0f/255.0f alpha:1.0f], UITextAttributeTextColor,
-                                                    nil] forState:UIControlStateNormal];
-    [activityFeedTabBarItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
-                                                    [UIColor colorWithRed:129.0f/255.0f green:99.0f/255.0f blue:69.0f/255.0f alpha:1.0f], UITextAttributeTextColor,
-                                                    nil] forState:UIControlStateSelected];
-    
-    [homeNavigationController setTabBarItem:homeTabBarItem];
-    [activityFeedNavigationController setTabBarItem:activityFeedTabBarItem];
-    
+    self.tabBarController.tabBar.hidden = YES;
+    homeNavigationController.navigationBar.hidden = YES;
+    profileNavigationController.navigationBar.hidden = YES;
+        
     [self.tabBarController setDelegate:self];
-    [self.tabBarController setViewControllers:[NSArray arrayWithObjects:homeNavigationController, emptyNavigationController, activityFeedNavigationController, nil]];
+    [self.tabBarController setViewControllers:[NSArray arrayWithObjects:homeNavigationController, emptyNavigationController, profileNavigationController, nil]];
     
     [self.navController setViewControllers:[NSArray arrayWithObjects:self.welcomeViewController, self.tabBarController, nil] animated:NO];
     

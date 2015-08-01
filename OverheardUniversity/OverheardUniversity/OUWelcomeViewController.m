@@ -27,7 +27,7 @@
     [super viewWillAppear:animated];
     
     // If not logged in, present login view controller
-    if (![PFUser currentUser]) {
+    if ([PFUser currentUser]) {
         [(AppDelegate*)[[UIApplication sharedApplication] delegate] presentLoginViewControllerAnimated:NO];
         return;
     }
