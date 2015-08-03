@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
 @class OUWelcomeViewController;
 
@@ -16,6 +17,14 @@
 - (void)logOut;
 
 @end
+
+typedef NS_ENUM(NSInteger, RegisterStage)
+{
+    RegisterName,
+    RegisterUsername,
+    RegisterPassword,
+    RegisterEmail
+};
 
 @interface OUWelcomeViewController : UIViewController
 

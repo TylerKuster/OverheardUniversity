@@ -7,11 +7,13 @@
 //
 
 #import <MapKit/MapKit.h>
+#import <Parse/Parse.h>
 #import "OUHomeViewController.h"
 
-@interface OUHomeViewController () <MKMapViewDelegate>
+@interface OUHomeViewController () <MKMapViewDelegate, NSCoding>
 
 @property (nonatomic, weak) IBOutlet MKMapView* mapView;
+@property (nonatomic, retain) PFGeoPoint* schoolLocation;
 
 @end
 
@@ -21,17 +23,33 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 //    [self.view setBackgroundColor:[UIColor grayColor]];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
     self.mapView.delegate = self;
+
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"homeSchoolLocation"]) {
+        NSData *data = [[NSUserDefaults standardUserDefaults] objectForKey:@"homeSchoolLocation"];
+        self.schoolLocation = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+
+        [self setInitialMapLocation:self.schoolLocation];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Parse map methods
+
+- (void)setInitialMapLocation:(PFGeoPoint*)geoPoint {
+    CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(geoPoint.latitude, geoPoint.longitude);
+    MKCoordinateRegion region = MKCoordinateRegionMake(coordinate, MKCoordinateSpanMake(.05, .05));
+    [self.mapView setRegion:region animated:YES];
 }
 
 /*

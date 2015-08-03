@@ -8,6 +8,6 @@
 
 #import "iCarousel.h"
 
-@interface OULocationCarousel : iCarousel
+@interface OULocationCarousel : iCarousel <iCarouselDataSource, iCarouselDelegate>
 
 @end

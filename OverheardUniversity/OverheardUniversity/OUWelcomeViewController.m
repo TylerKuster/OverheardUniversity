@@ -7,10 +7,9 @@
 //
 
 #import <Parse/Parse.h>
-
 #import "AppDelegate.h"
 #import "OUWelcomeViewController.h"
-#import "OUOnboardingViewController.h"
+#import "OUFetch.h"
 
 @interface OUWelcomeViewController ()
 
@@ -30,19 +29,13 @@
     
     [(AppDelegate*)[[UIApplication sharedApplication] delegate] presentTabBarController];
     
-    // If not logged in, present login view controller
-    if (![PFUser currentUser]) {
-//        OUOnboardingViewController *onboardingViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"onboardingVC"];
-        //    [loginViewController setDelegate:self];
-        //    loginViewController.fields = PFLogInFieldsFacebook;
-        //    loginViewController.facebookPermissions = [NSArray arrayWithObjects:@"user_about_me", nil];
-        self.tabBarController.selectedIndex = 0;
-//        [self.tabBarController presentViewController:onboardingViewController animated:NO completion:nil];
-        //[(AppDelegate*)[[UIApplication sharedApplication] delegate] presentOnboardingViewControllerAnimated:NO];
+    // If not logged in, present onboarding view controller
+    if ([PFUser currentUser]) {
+        self.tabBarController.selectedIndex = 1;
+    } else {
+        [self showOnboarding];
         return;
     }
-    
-    
     
     // Refresh current user with server side data -- checks if user is still valid and so on
     [[PFUser currentUser] fetchInBackgroundWithTarget:self selector:@selector(fetchCurrentUserCallbackWithResult:error:)];
@@ -51,6 +44,19 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Onboarding
+
+- (void)showOnboarding {
+    // Get list of schools and use the email address to preload the map
+    [OUFetch fetchSchoolListFromEmail:@"iastate"];
+//    NSData* data = [NSKeyedArchiver archivedDataWithRootObject:school];//[[school objectAtIndex:0] objectForKey:@"homeLocation"]];
+//    
+//    [[NSUserDefaults standardUserDefaults] setObject:data forKey:@"homeSchoolLocation"];
+//    [[NSUserDefaults standardUserDefaults] synchronize];
+    // TODO: finish connecting this up so that it suggests this as the users school instead of just assuming it's ISU
+    self.tabBarController.selectedIndex = 1;
 }
 
 #pragma mark - ()

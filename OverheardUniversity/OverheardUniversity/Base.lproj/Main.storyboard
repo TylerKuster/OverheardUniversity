@@ -61,8 +61,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="bqx-CT-vqg">
-                                <rect key="frame" x="0.0" y="100" width="600" height="323"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="bqx-CT-vqg">
+                                <rect key="frame" x="0.0" y="100" width="600" height="350"/>
                             </mapView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HAf-u8-EXd" customClass="OUSchoolCarousel">
                                 <rect key="frame" x="0.0" y="100" width="600" height="50"/>
@@ -70,12 +70,26 @@
                                     <constraint firstAttribute="height" constant="50" id="v1U-N9-igc"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2AN-R8-yoT" customClass="OULocationCarousel">
+                                <rect key="frame" x="0.0" y="450" width="600" height="150"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="d1B-a6-rFQ"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="2AN-R8-yoT" secondAttribute="trailing" id="H25-hk-xE4"/>
                             <constraint firstItem="HAf-u8-EXd" firstAttribute="leading" secondItem="oCe-2Y-coO" secondAttribute="leading" id="Kff-nU-9am"/>
+                            <constraint firstItem="bqx-CT-vqg" firstAttribute="leading" secondItem="oCe-2Y-coO" secondAttribute="leading" id="LEh-xu-Lf2"/>
+                            <constraint firstAttribute="bottom" secondItem="2AN-R8-yoT" secondAttribute="bottom" id="NR9-Ed-5CI"/>
                             <constraint firstAttribute="trailing" secondItem="HAf-u8-EXd" secondAttribute="trailing" id="Odu-L1-xYO"/>
+                            <constraint firstItem="2AN-R8-yoT" firstAttribute="leading" secondItem="oCe-2Y-coO" secondAttribute="leading" id="W1z-lH-sOw"/>
                             <constraint firstItem="HAf-u8-EXd" firstAttribute="top" secondItem="oCe-2Y-coO" secondAttribute="top" constant="100" id="fsv-hJ-Cmq"/>
+                            <constraint firstAttribute="bottom" secondItem="bqx-CT-vqg" secondAttribute="bottom" constant="150" id="ldl-Vz-hXb"/>
+                            <constraint firstItem="bqx-CT-vqg" firstAttribute="top" secondItem="oCe-2Y-coO" secondAttribute="top" constant="100" id="qj2-YS-HGQ"/>
+                            <constraint firstAttribute="trailing" secondItem="bqx-CT-vqg" secondAttribute="trailing" id="tdp-4H-4Ve"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="5nm-CV-p3B"/>

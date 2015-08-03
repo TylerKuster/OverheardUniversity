@@ -16,7 +16,6 @@
 #import "Reachability.h"
 #import "MBProgressHUD.h"
 //#import "OULogInViewController.h"
-#import "OUOnboardingViewController.h"
 #import "OURegisterViewController.h"
 #import "UIImage+ResizeAdditions.h"
 //#import "PAPAccountViewController.h"
@@ -190,25 +189,25 @@
 
 #pragma mark - PFLoginViewController
 
-- (void)logInViewController:(OUOnboardingViewController *)logInController didLogInUser:(PFUser *)user {
-    // user has logged in - we need to fetch all of their Facebook data before we let them in
-    if (![self shouldProceedToMainInterface:user]) {
-        self.hud = [MBProgressHUD showHUDAddedTo:self.navController.presentedViewController.view animated:YES];
-        [self.hud setLabelText:@"Loading"];
-        [self.hud setDimBackground:YES];
-    }
-    
-//    [[PFFacebookUtils facebook] requestWithGraphPath:@"me/?fields=name,picture" andDelegate:self];
-    
-    // Subscribe to private push channel
-    if (user) {
-        NSString *privateChannelName = [NSString stringWithFormat:@"user_%@", [user objectId]];
-        [[PFInstallation currentInstallation] setObject:[PFUser currentUser] forKey:kOUInstallationUserKey];
-        [[PFInstallation currentInstallation] addUniqueObject:privateChannelName forKey:kOUInstallationChannelsKey];
-        [[PFInstallation currentInstallation] saveEventually];
-        [user setObject:privateChannelName forKey:kOUUserPrivateChannelKey];
-    }
-}
+//- (void)logInViewController:(OUOnboardingViewController *)logInController didLogInUser:(PFUser *)user {
+//    // user has logged in - we need to fetch all of their Facebook data before we let them in
+//    if (![self shouldProceedToMainInterface:user]) {
+//        self.hud = [MBProgressHUD showHUDAddedTo:self.navController.presentedViewController.view animated:YES];
+//        [self.hud setLabelText:@"Loading"];
+//        [self.hud setDimBackground:YES];
+//    }
+//    
+////    [[PFFacebookUtils facebook] requestWithGraphPath:@"me/?fields=name,picture" andDelegate:self];
+//    
+//    // Subscribe to private push channel
+//    if (user) {
+//        NSString *privateChannelName = [NSString stringWithFormat:@"user_%@", [user objectId]];
+//        [[PFInstallation currentInstallation] setObject:[PFUser currentUser] forKey:kOUInstallationUserKey];
+//        [[PFInstallation currentInstallation] addUniqueObject:privateChannelName forKey:kOUInstallationChannelsKey];
+//        [[PFInstallation currentInstallation] saveEventually];
+//        [user setObject:privateChannelName forKey:kOUUserPrivateChannelKey];
+//    }
+//}
 /*
 #pragma mark - PF_FBRequestDelegate
 - (void)request:(PF_FBRequest *)request didLoad:(id)result {
@@ -335,20 +334,20 @@
     return self.networkStatus != NotReachable;
 }
 
-- (void)presentOnboardingViewControllerAnimated:(BOOL)animated {
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    OUOnboardingViewController *onboardingViewController = [storyboard instantiateViewControllerWithIdentifier:@"onboardingVC"];
-//    [loginViewController setDelegate:self];
-//    loginViewController.fields = PFLogInFieldsFacebook;
-//    loginViewController.facebookPermissions = [NSArray arrayWithObjects:@"user_about_me", nil];
-    
-    [self.welcomeViewController/*.view.window.rootViewController*/ presentViewController:onboardingViewController animated:NO completion:nil];
-}
+//- (void)presentOnboardingViewControllerAnimated:(BOOL)animated {
+//    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//    OUOnboardingViewController *onboardingViewController = [storyboard instantiateViewControllerWithIdentifier:@"onboardingVC"];
+////    [loginViewController setDelegate:self];
+////    loginViewController.fields = PFLogInFieldsFacebook;
+////    loginViewController.facebookPermissions = [NSArray arrayWithObjects:@"user_about_me", nil];
+//    
+//    [self.welcomeViewController/*.view.window.rootViewController*/ presentViewController:onboardingViewController animated:NO completion:nil];
+//}
 
 
-- (void)presentOnboardingViewController {
-    [self presentOnboardingViewControllerAnimated:YES];
-}
+//- (void)presentOnboardingViewController {
+//    [self presentOnboardingViewControllerAnimated:YES];
+//}
 
 - (void)presentTabBarController {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
