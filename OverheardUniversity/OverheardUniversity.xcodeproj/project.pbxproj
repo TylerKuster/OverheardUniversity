@@ -27,6 +27,7 @@
 		466EF6DD1B689D4100D099BD /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 466EF6DC1B689D4100D099BD /* MBProgressHUD.m */; };
 		4671C6101B6D6BF4007281EA /* OUFetch.m in Sources */ = {isa = PBXBuildFile; fileRef = 4671C60F1B6D6BF4007281EA /* OUFetch.m */; };
 		4671C6131B6F3A8D007281EA /* OUListenButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4671C6121B6F3A8D007281EA /* OUListenButton.m */; };
+		4671C6161B6F44B2007281EA /* OULocationCarouselItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4671C6151B6F44B2007281EA /* OULocationCarouselItem.m */; };
 		468A213D1B6B1AD200C4D204 /* OULocationCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = 468A213C1B6B1AD200C4D204 /* OULocationCarousel.m */; };
 		468A21411B6B1EA500C4D204 /* OUHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 468A21401B6B1EA500C4D204 /* OUHomeViewController.m */; };
 		468A21441B6B207E00C4D204 /* OUSchoolCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = 468A21431B6B207E00C4D204 /* OUSchoolCarousel.m */; };
@@ -87,6 +88,8 @@
 		4671C60F1B6D6BF4007281EA /* OUFetch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OUFetch.m; sourceTree = "<group>"; };
 		4671C6111B6F3A8D007281EA /* OUListenButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OUListenButton.h; sourceTree = "<group>"; };
 		4671C6121B6F3A8D007281EA /* OUListenButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OUListenButton.m; sourceTree = "<group>"; };
+		4671C6141B6F44B2007281EA /* OULocationCarouselItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OULocationCarouselItem.h; sourceTree = "<group>"; };
+		4671C6151B6F44B2007281EA /* OULocationCarouselItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OULocationCarouselItem.m; sourceTree = "<group>"; };
 		468A213B1B6B1AD200C4D204 /* OULocationCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OULocationCarousel.h; sourceTree = "<group>"; };
 		468A213C1B6B1AD200C4D204 /* OULocationCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OULocationCarousel.m; sourceTree = "<group>"; };
 		468A213F1B6B1EA500C4D204 /* OUHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OUHomeViewController.h; sourceTree = "<group>"; };
@@ -301,6 +304,8 @@
 				468A21431B6B207E00C4D204 /* OUSchoolCarousel.m */,
 				468A213B1B6B1AD200C4D204 /* OULocationCarousel.h */,
 				468A213C1B6B1AD200C4D204 /* OULocationCarousel.m */,
+				4671C6141B6F44B2007281EA /* OULocationCarouselItem.h */,
+				4671C6151B6F44B2007281EA /* OULocationCarouselItem.m */,
 				4671C6111B6F3A8D007281EA /* OUListenButton.h */,
 				4671C6121B6F3A8D007281EA /* OUListenButton.m */,
 			);
@@ -476,6 +481,7 @@
 				466EF6D31B688F8C00D099BD /* UIImage+ResizeAdditions.m in Sources */,
 				468A21471B6B20DA00C4D204 /* OUBubbleViewController.m in Sources */,
 				4605E1281B6C654000C3E917 /* OUProfileViewController.m in Sources */,
+				4671C6161B6F44B2007281EA /* OULocationCarouselItem.m in Sources */,
 				468A213D1B6B1AD200C4D204 /* OULocationCarousel.m in Sources */,
 				466EF6D21B688F8C00D099BD /* UIImage+AlphaAdditions.m in Sources */,
 				460D611D1B69C919008D1894 /* OUTabBarController.m in Sources */,

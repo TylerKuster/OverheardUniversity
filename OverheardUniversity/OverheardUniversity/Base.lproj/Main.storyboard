@@ -62,19 +62,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="bqx-CT-vqg">
-                                <rect key="frame" x="0.0" y="100" width="600" height="290"/>
+                                <rect key="frame" x="0.0" y="100" width="600" height="294"/>
                             </mapView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HAf-u8-EXd" customClass="OUSchoolCarousel">
-                                <rect key="frame" x="0.0" y="100" width="600" height="50"/>
+                                <rect key="frame" x="0.0" y="70" width="600" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="v1U-N9-igc"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2AN-R8-yoT" customClass="OULocationCarousel">
-                                <rect key="frame" x="0.0" y="390" width="600" height="210"/>
+                                <rect key="frame" x="0.0" y="394" width="600" height="206"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="210" id="d1B-a6-rFQ"/>
+                                    <constraint firstAttribute="height" constant="206" id="d1B-a6-rFQ"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -86,8 +86,8 @@
                             <constraint firstAttribute="bottom" secondItem="2AN-R8-yoT" secondAttribute="bottom" id="NR9-Ed-5CI"/>
                             <constraint firstAttribute="trailing" secondItem="HAf-u8-EXd" secondAttribute="trailing" id="Odu-L1-xYO"/>
                             <constraint firstItem="2AN-R8-yoT" firstAttribute="leading" secondItem="oCe-2Y-coO" secondAttribute="leading" id="W1z-lH-sOw"/>
-                            <constraint firstItem="HAf-u8-EXd" firstAttribute="top" secondItem="oCe-2Y-coO" secondAttribute="top" constant="100" id="fsv-hJ-Cmq"/>
-                            <constraint firstAttribute="bottom" secondItem="bqx-CT-vqg" secondAttribute="bottom" constant="210" id="ldl-Vz-hXb"/>
+                            <constraint firstItem="HAf-u8-EXd" firstAttribute="top" secondItem="oCe-2Y-coO" secondAttribute="top" constant="70" id="fsv-hJ-Cmq"/>
+                            <constraint firstAttribute="bottom" secondItem="bqx-CT-vqg" secondAttribute="bottom" constant="206" id="ldl-Vz-hXb"/>
                             <constraint firstItem="bqx-CT-vqg" firstAttribute="top" secondItem="oCe-2Y-coO" secondAttribute="top" constant="100" id="qj2-YS-HGQ"/>
                             <constraint firstAttribute="trailing" secondItem="bqx-CT-vqg" secondAttribute="trailing" id="tdp-4H-4Ve"/>
                         </constraints>

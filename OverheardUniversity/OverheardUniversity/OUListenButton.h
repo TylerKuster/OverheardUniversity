@@ -8,6 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+@class OUListenButton;
+
+@protocol OUListenButtonDelegate <NSObject>
+- (void)isListening:(BOOL)isListening;
+
+@end
+
 @interface OUListenButton : UIButton
+
+@property (weak, nonatomic) id<OUListenButtonDelegate> delegate;
 
 @end

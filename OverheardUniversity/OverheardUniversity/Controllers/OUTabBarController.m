@@ -21,7 +21,7 @@
 
 - (void)commonInit
 {
-    UIView* headerBar = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, [UIScreen mainScreen].bounds.size.width, 100.0f)];
+    UIView* headerBar = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, [UIScreen mainScreen].bounds.size.width, 70.0f)];
     headerBar.backgroundColor = [OUTheme brandColor];
 
     [self.view insertSubview:headerBar atIndex:1];
