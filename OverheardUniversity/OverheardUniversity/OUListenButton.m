@@ -31,7 +31,7 @@
     
     [self addSubview:self.title];
     
-    [self addTarget:self action:@selector(pluslistenButtonTapped) forControlEvents:UIControlEventTouchUpInside];
+//    [self addTarget:self action:@selector(pluslistenButtonTapped) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (id)initWithFrame:(CGRect)frame

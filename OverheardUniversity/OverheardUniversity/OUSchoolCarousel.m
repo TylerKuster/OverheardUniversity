@@ -38,7 +38,7 @@
 
 #pragma mark - iCarousel DataSource
 - (NSUInteger)numberOfItemsInCarousel:(iCarousel *)carousel {
-    return 3;
+    return 1;
 }
 
 - (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSUInteger)index reusingView:(UIView *)view {
@@ -54,7 +54,7 @@
        
         view.contentMode = UIViewContentModeCenter;
         
-        label = [[UILabel alloc] initWithFrame:CGRectMake(-50.0f, -10.0f, 425.0f, 30.0f)];
+        label = [[UILabel alloc] initWithFrame:CGRectMake(-50.0f, 0.0f, 425.0f, 30.0f)];
         label.backgroundColor = [UIColor whiteColor];
         label.textAlignment = NSTextAlignmentCenter;
         label.font = [UIFont fontWithName:@"AvenirNext-Medium"  size:14.0];

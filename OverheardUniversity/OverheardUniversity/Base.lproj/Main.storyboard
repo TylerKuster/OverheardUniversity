@@ -62,19 +62,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="bqx-CT-vqg">
-                                <rect key="frame" x="0.0" y="100" width="600" height="294"/>
+                                <rect key="frame" x="0.0" y="95" width="600" height="313"/>
                             </mapView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HAf-u8-EXd" customClass="OUSchoolCarousel">
-                                <rect key="frame" x="0.0" y="70" width="600" height="50"/>
+                                <rect key="frame" x="0.0" y="70" width="600" height="25"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="v1U-N9-igc"/>
+                                    <constraint firstAttribute="height" constant="25" id="v1U-N9-igc"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2AN-R8-yoT" customClass="OULocationCarousel">
-                                <rect key="frame" x="0.0" y="394" width="600" height="206"/>
+                                <rect key="frame" x="0.0" y="408" width="600" height="192"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="206" id="d1B-a6-rFQ"/>
+                                    <constraint firstAttribute="height" constant="192" id="d1B-a6-rFQ"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -87,14 +87,16 @@
                             <constraint firstAttribute="trailing" secondItem="HAf-u8-EXd" secondAttribute="trailing" id="Odu-L1-xYO"/>
                             <constraint firstItem="2AN-R8-yoT" firstAttribute="leading" secondItem="oCe-2Y-coO" secondAttribute="leading" id="W1z-lH-sOw"/>
                             <constraint firstItem="HAf-u8-EXd" firstAttribute="top" secondItem="oCe-2Y-coO" secondAttribute="top" constant="70" id="fsv-hJ-Cmq"/>
-                            <constraint firstAttribute="bottom" secondItem="bqx-CT-vqg" secondAttribute="bottom" constant="206" id="ldl-Vz-hXb"/>
-                            <constraint firstItem="bqx-CT-vqg" firstAttribute="top" secondItem="oCe-2Y-coO" secondAttribute="top" constant="100" id="qj2-YS-HGQ"/>
+                            <constraint firstAttribute="bottom" secondItem="bqx-CT-vqg" secondAttribute="bottom" constant="192" id="ldl-Vz-hXb"/>
+                            <constraint firstItem="bqx-CT-vqg" firstAttribute="top" secondItem="oCe-2Y-coO" secondAttribute="top" constant="95" id="qj2-YS-HGQ"/>
                             <constraint firstAttribute="trailing" secondItem="bqx-CT-vqg" secondAttribute="trailing" id="tdp-4H-4Ve"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="5nm-CV-p3B"/>
                     <connections>
+                        <outlet property="locationCarousel" destination="2AN-R8-yoT" id="e7I-SW-yez"/>
                         <outlet property="mapView" destination="bqx-CT-vqg" id="7UQ-GK-nC0"/>
+                        <outlet property="schoolCarousel" destination="HAf-u8-EXd" id="zJB-JP-jHP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WpG-mZ-ShA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -166,6 +168,23 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="122" y="417"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="YT9-pg-xfF">
+            <objects>
+                <viewController storyboardIdentifier="testVC" id="Dvs-OQ-DJ4" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Hy4-uO-51h"/>
+                        <viewControllerLayoutGuide type="bottom" id="e3q-ja-uZG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="EAm-b6-c5v">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VWw-jT-1AX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1102" y="503"/>
         </scene>
     </scenes>
 </document>

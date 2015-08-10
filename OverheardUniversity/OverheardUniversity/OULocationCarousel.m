@@ -10,6 +10,7 @@
 #import "OULocationCarouselItem.h"
 #import "OUListenButton.h"
 #import "OUTheme.h"
+#import "OUFetch.h"
 
 @interface OULocationCarousel () <OUListenButtonDelegate>
 
@@ -25,10 +26,9 @@
     self.delegate = self;
     self.dataSource = self;
     
-
-    self.type = iCarouselTypeLinear;
-//    [self setContentOffset:CGSizeMake(-90, 0.0f)];
-    self.areaLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 3.0f, [UIScreen mainScreen].bounds.size.width, 20.0f)];
+    [OUFetch fetchBuildings];
+    
+    self.areaLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, -4.0f, [UIScreen mainScreen].bounds.size.width, 20.0f)];
     self.areaLabel.textAlignment = NSTextAlignmentCenter;
     self.areaLabel.textColor = [UIColor colorWithRed:210.0f / 255.0f green:210.0f / 255.0f blue:210.0f / 255.0f alpha:1.0f];
     self.areaLabel.font = [UIFont fontWithName:@"AvenirNext-Regular"  size:14.0];
@@ -100,7 +100,7 @@
     //views outside of the `if (view == nil) {...}` check otherwise
     //you'll get weird issues with carousel item content appearing
     //in the wrong place in the carousel
-    listenButton.selected = NO;
+//    listenButton.selected = NO;
     
     return view;
 }

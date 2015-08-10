@@ -10,6 +10,9 @@
 #import <Parse/Parse.h>
 
 @interface OUFetch : NSObject
+
 + (void)fetchSchoolListFromEmail:(NSString*)email;
++ (void)fetchBuildings;
++ (void)findObjectsInBackgroundWithBlock:(PF_NULLABLE PFArrayResultBlock)block;
 
 @end

@@ -41,7 +41,7 @@ static const CGFloat buttonTrailing = 88.0f;
     
     CGFloat labelWidth = self.frame.size.width - cardBorderTrailing;
     
-    self.locationName = [[UILabel alloc] initWithFrame:CGRectMake(cardBorderLeading, 33.0f, labelWidth, 30.0f)];
+    self.locationName = [[UILabel alloc] initWithFrame:CGRectMake(cardBorderLeading, 31.5f, labelWidth, 30.0f)];
     self.locationName.backgroundColor = [UIColor whiteColor];
     self.locationName.textAlignment = NSTextAlignmentCenter;
     self.locationName.textColor = [UIColor colorWithRed:66.0f / 255.0f green:66.0f / 255.0f blue:66.0f / 255.0f alpha:1.0f];

@@ -9,11 +9,19 @@
 
 #import "OUTabBarController.h"
 #import "OUTheme.h"
+#import "OUCreatePostTextView.h"
+
+static const CGFloat kHeaderBarHeight = 70.0f;
+static const CGFloat kFooterBarHeight = 48.0f;
 
 @interface OUTabBarController ()
 
 @property (nonatomic, retain) UIButton* searchButton;
 @property (nonatomic, retain) UIButton* profileButton;
+
+@property (nonatomic, retain) UIView* headerBar;
+@property (nonatomic, retain) OUCreatePostTextView* postTextView;
+@property (nonatomic, retain) UIView* footerBar;
 
 @end
 
@@ -21,10 +29,12 @@
 
 - (void)commonInit
 {
-    UIView* headerBar = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, [UIScreen mainScreen].bounds.size.width, 70.0f)];
-    headerBar.backgroundColor = [OUTheme brandColor];
-
-    [self.view insertSubview:headerBar atIndex:1];
+    CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width;
+    CGFloat screenHeight = [UIScreen mainScreen].bounds.size.height;
+    
+    [self createHeaderViewWithWidth:screenWidth];
+    [self createFooterViewWithWidth:screenWidth andHeight:screenHeight];
+    
 //    self.selectedIndex = 0;
     if (![PFUser currentUser]) {
 //        OUOnboardingViewController *onboardingViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"onboardingVC"];
@@ -71,14 +81,55 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)createHeaderViewWithWidth:(CGFloat)width {
+    
+    self.headerBar = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, width, kHeaderBarHeight)];
+    self.headerBar.backgroundColor = [OUTheme brandColor];
+    
+    [self.view insertSubview:self.headerBar atIndex:TopLevel];
+    
+    UIButton* search = [UIButton buttonWithType:UIButtonTypeCustom];
+    search.frame = CGRectMake(16.0f, 26.0f, 32.0f, 32.0f);
+    search.backgroundColor = [UIColor whiteColor];
+    
+    [self.headerBar insertSubview:search atIndex:BaseLevel];
+    
+    UIButton* refresh = [UIButton buttonWithType:UIButtonTypeCustom];
+    refresh.frame = CGRectMake(width - 48.0f, 26.0f, 32.0f, 32.0f);
+    refresh.backgroundColor = [UIColor whiteColor];
+    
+    [self.headerBar insertSubview:refresh atIndex:BaseLevel];
+    
+    UIImageView* logo = [[UIImageView alloc]initWithFrame:CGRectMake((width / 2.0f) - 50.5, 24, 101, 36)];
+    logo.image = [UIImage imageNamed:@"overheardLogo"];
+    
+    [self.headerBar insertSubview:logo atIndex:BaseLevel];
 }
-*/
+
+- (void)createFooterViewWithWidth:(CGFloat)width andHeight:(CGFloat)height {
+    
+    self.footerBar = [[UIView alloc] initWithFrame:CGRectMake(0.0f, height - kFooterBarHeight, width, kFooterBarHeight)];
+    self.footerBar.backgroundColor = [OUTheme brandColor];
+    
+    [self.view insertSubview:self.footerBar atIndex:TopLevel];
+    
+    UIButton* postMap = [UIButton buttonWithType:UIButtonTypeCustom];
+    postMap.frame = CGRectMake(16.0f, 8.0f, 32.0f, 32.0f);
+    postMap.backgroundColor = [UIColor whiteColor];
+    
+    [self.footerBar insertSubview:postMap atIndex:BaseLevel];
+    
+    UIButton* profile = [UIButton buttonWithType:UIButtonTypeCustom];
+    profile.frame = CGRectMake(width - 48.0f, 8.0f, 32.0f, 32.0f);
+    profile.backgroundColor = [UIColor whiteColor];
+    
+    [self.footerBar insertSubview:profile atIndex:BaseLevel];
+    
+    UITextView* postTextView = [[UITextView alloc]initWithFrame:CGRectMake((width / 2.0f) - 99.5, 10.0f, 199, 28)];
+    
+    
+    [self.footerBar addSubview:postTextView];
+
+}
 
 @end
