@@ -14,7 +14,7 @@
 static const CGFloat kHeaderBarHeight = 70.0f;
 static const CGFloat kFooterBarHeight = 48.0f;
 
-@interface OUTabBarController ()
+@interface OUTabBarController () <UITextViewDelegate>
 
 @property (nonatomic, retain) UIButton* searchButton;
 @property (nonatomic, retain) UIButton* profileButton;
@@ -125,11 +125,17 @@ static const CGFloat kFooterBarHeight = 48.0f;
     
     [self.footerBar insertSubview:profile atIndex:BaseLevel];
     
-    UITextView* postTextView = [[UITextView alloc]initWithFrame:CGRectMake((width / 2.0f) - 99.5, 10.0f, 199, 28)];
-    
-    
+    OUCreatePostTextView* postTextView = [[OUCreatePostTextView alloc]initWithFrame:CGRectMake((width / 2.0f) - 99.5, 10.0f, 199, 28)];
+    postTextView.delegate = self;
     [self.footerBar addSubview:postTextView];
 
+}
+
+#pragma mark - Create Post Text View Delegate
+
+- (BOOL)textViewShouldBeginEditing:(UITextView *)textView {
+    NSLog(@"got it");
+    return YES;
 }
 
 @end

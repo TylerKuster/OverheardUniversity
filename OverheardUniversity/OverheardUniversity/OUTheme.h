@@ -14,7 +14,9 @@
 + (UIColor*)offWhiteColor;
 + (UIColor*)randomColor;
 + (CAGradientLayer*)onboardingGradientFromView:(UIView*)view;
+
 + (UIFont*)onboardingFont;
++ (UIFont*)textViewFont;
 
 + (CGRect)areaCarouselRect;
 + (CGRect)locationCarouselRect;

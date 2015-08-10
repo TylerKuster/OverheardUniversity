@@ -56,6 +56,11 @@ static const CGFloat kLocationCarouselHeight = 200.0f;
     return [UIFont fontWithName:@"AvenirNext-Medium" size:18.0f];
 }
 
++ (UIFont*)textViewFont
+{
+    return [UIFont fontWithName:@"AvenirNext-Medium" size:18.0f];
+}
+
 + (CGRect)areaCarouselRect
 {
     CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width;

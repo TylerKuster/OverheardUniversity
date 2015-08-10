@@ -7,14 +7,15 @@
 //
 
 #import "OUCreatePostTextView.h"
+#import "OUTheme.h"
 
 @implementation OUCreatePostTextView
 
 - (void)commonInit
 {
     //    self.backgroundColor = [UIColor purpleColor];
-    self.placeholderLabel.text = NSLocalizedString(@"What've you heard?", nil);
-    
+    self.font = [OUTheme textViewFont];
+    [self setPlaceholder:NSLocalizedString(@"What have you heard?", nil)];
 }
 
 - (id)initWithFrame:(CGRect)frame
@@ -33,6 +34,15 @@
         [self commonInit];
     }
     return self;
+}
+
+- (void)setPlaceholder:(NSString *)placeholder {
+    [super setPlaceholder:placeholder];
+    
+    // Vertically centers the text - [TK]
+    self.textContainerInset = UIEdgeInsetsMake(2.5f, 0, 0, 0);
+    
+    self.placeholderColor = [UIColor grayColor];
 }
 
 @end

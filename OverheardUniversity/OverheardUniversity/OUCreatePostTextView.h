@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import <UITextView+Placeholder/UITextView+Placeholder.h>
 
-@interface OUCreatePostTextView : UITextView
+@interface OUCreatePostTextView : UITextView 
 
 @end
