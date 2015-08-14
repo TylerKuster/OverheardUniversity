@@ -42,6 +42,7 @@
 		46C2A8D41B7DAE7100525D40 /* OUParticipantCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = 46C2A8D31B7DAE7100525D40 /* OUParticipantCarousel.m */; };
 		46C2A8D91B7DB13100525D40 /* OUBuildingCarouselButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 46C2A8D81B7DB13100525D40 /* OUBuildingCarouselButton.m */; };
 		46C2A8DD1B7DB68400525D40 /* OUCreatePostCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = 46C2A8DC1B7DB68400525D40 /* OUCreatePostCarousel.m */; };
+		46C2A8E01B7DD08F00525D40 /* OUHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 46C2A8DF1B7DD08F00525D40 /* OUHeaderView.m */; };
 		9F67C7024016B7D627C55C4C /* libPods-OverheardUniversity.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE19B57B8F3D9F615A3EB155 /* libPods-OverheardUniversity.a */; };
 /* End PBXBuildFile section */
 
@@ -124,6 +125,8 @@
 		46C2A8D81B7DB13100525D40 /* OUBuildingCarouselButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OUBuildingCarouselButton.m; sourceTree = "<group>"; };
 		46C2A8DB1B7DB68400525D40 /* OUCreatePostCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OUCreatePostCarousel.h; sourceTree = "<group>"; };
 		46C2A8DC1B7DB68400525D40 /* OUCreatePostCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OUCreatePostCarousel.m; sourceTree = "<group>"; };
+		46C2A8DE1B7DD08F00525D40 /* OUHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OUHeaderView.h; sourceTree = "<group>"; };
+		46C2A8DF1B7DD08F00525D40 /* OUHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OUHeaderView.m; sourceTree = "<group>"; };
 		ADF1B07972D822386067B737 /* Pods-OverheardUniversity.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OverheardUniversity.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OverheardUniversity/Pods-OverheardUniversity.debug.xcconfig"; sourceTree = "<group>"; };
 		CE19B57B8F3D9F615A3EB155 /* libPods-OverheardUniversity.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OverheardUniversity.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6DA70CB314E5EEC9CF85ED2 /* Pods-OverheardUniversity.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OverheardUniversity.release.xcconfig"; path = "Pods/Target Support Files/Pods-OverheardUniversity/Pods-OverheardUniversity.release.xcconfig"; sourceTree = "<group>"; };
@@ -318,9 +321,10 @@
 		468A213E1B6B1E5F00C4D204 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				46C2A8D11B7DAE0F00525D40 /* Footer */,
-				46C2A8D51B7DAEA800525D40 /* PostCarousels */,
+				46C2A8E11B7DD0A400525D40 /* Header */,
 				46C2A8D61B7DAED000525D40 /* MapCarousels */,
+				46C2A8D51B7DAEA800525D40 /* PostCarousels */,
+				46C2A8D11B7DAE0F00525D40 /* Footer */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -383,6 +387,15 @@
 				46C2A8D81B7DB13100525D40 /* OUBuildingCarouselButton.m */,
 			);
 			name = BuildingCarousel;
+			sourceTree = "<group>";
+		};
+		46C2A8E11B7DD0A400525D40 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				46C2A8DE1B7DD08F00525D40 /* OUHeaderView.h */,
+				46C2A8DF1B7DD08F00525D40 /* OUHeaderView.m */,
+			);
+			name = Header;
 			sourceTree = "<group>";
 		};
 		84CCA58BF86B275B2F25AA40 /* Pods */ = {
@@ -552,6 +565,7 @@
 				466EF6D21B688F8C00D099BD /* UIImage+AlphaAdditions.m in Sources */,
 				460D611D1B69C919008D1894 /* OUTabBarController.m in Sources */,
 				466EF6D41B688F8C00D099BD /* UIImage+RoundedCornerAdditions.m in Sources */,
+				46C2A8E01B7DD08F00525D40 /* OUHeaderView.m in Sources */,
 				466EF6DD1B689D4100D099BD /* MBProgressHUD.m in Sources */,
 				46C2A8CD1B7D968200525D40 /* OUFooterView.m in Sources */,
 				466EF6D91B689D2400D099BD /* Reachability.m in Sources */,

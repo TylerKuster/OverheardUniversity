@@ -35,6 +35,7 @@
     [self addSubview:profile];
     
     self.postTextView = [[OUCreatePostTextView alloc]initWithFrame:CGRectMake((self.frame.size.width / 2.0f) - 99.5, 10.0f, 199, 28)];
+    self.postTextView.textAlignment = NSTextAlignmentCenter;
     self.postTextView.delegate = self;
     
     [self addSubview:self.postTextView];
@@ -59,12 +60,24 @@
 }
 
 #pragma mark - UITextViewDelegate
+
 - (BOOL)textViewShouldBeginEditing:(UITextView *)textView {
-    NSLog(@"got it");
-    self.postTextView.frame = [OUTheme createPostTextViewActiveRect];
-    [self.delegate presentCreatePostView];
+    [UIView animateWithDuration:0.2f
+                          delay:0.0f
+                        options:UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
+                         self.postTextView.textAlignment = NSTextAlignmentLeft;
+                         self.postTextView.frame = [OUTheme createPostTextViewActiveRect];
+                     } completion:^(BOOL finished) {
+                         [self.delegate presentCreatePostView];
+                     }];
     
-    self.postTextView.textAlignment = NSTextAlignmentCenter;
+    [UIView animateWithDuration:0.2f
+                          delay:0.15f
+                        options:UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
+                         [self.delegate presentCreatePostView];
+                     } completion:nil];
     
     return YES;
 }

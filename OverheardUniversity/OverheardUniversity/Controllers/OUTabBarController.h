@@ -8,12 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-typedef NS_ENUM(NSInteger, ViewLevel)
-{
-    BaseLevel,
-    TopLevel,
-};
-
 @interface OUTabBarController : UITabBarController
 
 @end

@@ -11,8 +11,10 @@
 #import <iCarousel/iCarousel.h>
 
 #import "OUHomeViewController.h"
+#import "OUTheme.h"
 #import "OUSchoolCarousel.h"
 #import "OUCreatePostCarousel.h"
+#import "OUHeaderView.h"
 #import "OUFooterView.h"
 
 static const CGFloat kHeaderBarHeight = 70.0f;
@@ -25,6 +27,7 @@ static const CGFloat kFooterBarHeight = 48.0f;
 @property (nonatomic, weak) IBOutlet OUCreatePostCarousel* createPostCarousel;
 @property (nonatomic, weak) IBOutlet iCarousel* locationCarousel;
 @property (nonatomic, retain) PFGeoPoint* schoolLocation;
+@property (nonatomic, retain) OUHeaderView* headerBar;
 @property (nonatomic, retain) OUFooterView* footerBar;
 
 @end
@@ -47,6 +50,11 @@ static const CGFloat kFooterBarHeight = 48.0f;
     self.footerBar.delegate = self;
     
     [self.view insertSubview:self.footerBar aboveSubview:self.locationCarousel];
+    
+    self.headerBar = [[OUHeaderView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, screenWidth, kHeaderBarHeight)];
+    self.headerBar.backgroundColor = [OUTheme brandColor];
+    
+    [self.view insertSubview:self.headerBar aboveSubview:self.locationCarousel];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -95,6 +103,7 @@ static const CGFloat kFooterBarHeight = 48.0f;
                      animations:^{
                          self.createPostCarousel.alpha = 1.0f;
                          [self.schoolCarousel setCarouselState:CarouselStateHidden];
+                         [self.headerBar setHeaderViewState:HeaderViewStatePost];
                      } completion:nil];
 }
 
