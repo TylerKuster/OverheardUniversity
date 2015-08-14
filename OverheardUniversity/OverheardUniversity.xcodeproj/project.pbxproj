@@ -37,6 +37,10 @@
 		468A214E1B6B26CC00C4D204 /* OUWelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 468A214D1B6B26CC00C4D204 /* OUWelcomeViewController.m */; };
 		468A21511B6B27F500C4D204 /* OURegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 468A21501B6B27F500C4D204 /* OURegisterViewController.m */; };
 		468A21541B6B280C00C4D204 /* OULogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 468A21531B6B280C00C4D204 /* OULogInViewController.m */; };
+		46C2A8CD1B7D968200525D40 /* OUFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 46C2A8CC1B7D968200525D40 /* OUFooterView.m */; };
+		46C2A8D01B7DADE000525D40 /* OUBuildingCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = 46C2A8CF1B7DADE000525D40 /* OUBuildingCarousel.m */; };
+		46C2A8D41B7DAE7100525D40 /* OUParticipantCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = 46C2A8D31B7DAE7100525D40 /* OUParticipantCarousel.m */; };
+		46C2A8D91B7DB13100525D40 /* OUBuildingCarouselButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 46C2A8D81B7DB13100525D40 /* OUBuildingCarouselButton.m */; };
 		9F67C7024016B7D627C55C4C /* libPods-OverheardUniversity.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE19B57B8F3D9F615A3EB155 /* libPods-OverheardUniversity.a */; };
 /* End PBXBuildFile section */
 
@@ -109,6 +113,14 @@
 		468A21501B6B27F500C4D204 /* OURegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OURegisterViewController.m; sourceTree = "<group>"; };
 		468A21521B6B280C00C4D204 /* OULogInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OULogInViewController.h; sourceTree = "<group>"; };
 		468A21531B6B280C00C4D204 /* OULogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OULogInViewController.m; sourceTree = "<group>"; };
+		46C2A8CB1B7D968200525D40 /* OUFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OUFooterView.h; sourceTree = "<group>"; };
+		46C2A8CC1B7D968200525D40 /* OUFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OUFooterView.m; sourceTree = "<group>"; };
+		46C2A8CE1B7DADE000525D40 /* OUBuildingCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OUBuildingCarousel.h; sourceTree = "<group>"; };
+		46C2A8CF1B7DADE000525D40 /* OUBuildingCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OUBuildingCarousel.m; sourceTree = "<group>"; };
+		46C2A8D21B7DAE7100525D40 /* OUParticipantCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OUParticipantCarousel.h; sourceTree = "<group>"; };
+		46C2A8D31B7DAE7100525D40 /* OUParticipantCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OUParticipantCarousel.m; sourceTree = "<group>"; };
+		46C2A8D71B7DB13100525D40 /* OUBuildingCarouselButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OUBuildingCarouselButton.h; sourceTree = "<group>"; };
+		46C2A8D81B7DB13100525D40 /* OUBuildingCarouselButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OUBuildingCarouselButton.m; sourceTree = "<group>"; };
 		ADF1B07972D822386067B737 /* Pods-OverheardUniversity.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OverheardUniversity.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OverheardUniversity/Pods-OverheardUniversity.debug.xcconfig"; sourceTree = "<group>"; };
 		CE19B57B8F3D9F615A3EB155 /* libPods-OverheardUniversity.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OverheardUniversity.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6DA70CB314E5EEC9CF85ED2 /* Pods-OverheardUniversity.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OverheardUniversity.release.xcconfig"; path = "Pods/Target Support Files/Pods-OverheardUniversity/Pods-OverheardUniversity.release.xcconfig"; sourceTree = "<group>"; };
@@ -303,16 +315,9 @@
 		468A213E1B6B1E5F00C4D204 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				4618DCE01B782A9800163647 /* OUCreatePostTextView.h */,
-				4618DCE11B782A9800163647 /* OUCreatePostTextView.m */,
-				468A21421B6B207E00C4D204 /* OUSchoolCarousel.h */,
-				468A21431B6B207E00C4D204 /* OUSchoolCarousel.m */,
-				468A213B1B6B1AD200C4D204 /* OULocationCarousel.h */,
-				468A213C1B6B1AD200C4D204 /* OULocationCarousel.m */,
-				4671C6141B6F44B2007281EA /* OULocationCarouselItem.h */,
-				4671C6151B6F44B2007281EA /* OULocationCarouselItem.m */,
-				4671C6111B6F3A8D007281EA /* OUListenButton.h */,
-				4671C6121B6F3A8D007281EA /* OUListenButton.m */,
+				46C2A8D11B7DAE0F00525D40 /* Footer */,
+				46C2A8D51B7DAEA800525D40 /* PostCarousels */,
+				46C2A8D61B7DAED000525D40 /* MapCarousels */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -326,6 +331,53 @@
 				468A21491B6B20F600C4D204 /* OUFeedViewController.m */,
 			);
 			name = Feed;
+			sourceTree = "<group>";
+		};
+		46C2A8D11B7DAE0F00525D40 /* Footer */ = {
+			isa = PBXGroup;
+			children = (
+				46C2A8CB1B7D968200525D40 /* OUFooterView.h */,
+				46C2A8CC1B7D968200525D40 /* OUFooterView.m */,
+				4618DCE01B782A9800163647 /* OUCreatePostTextView.h */,
+				4618DCE11B782A9800163647 /* OUCreatePostTextView.m */,
+			);
+			name = Footer;
+			sourceTree = "<group>";
+		};
+		46C2A8D51B7DAEA800525D40 /* PostCarousels */ = {
+			isa = PBXGroup;
+			children = (
+				46C2A8DA1B7DB13B00525D40 /* BuildingCarousel */,
+				46C2A8D21B7DAE7100525D40 /* OUParticipantCarousel.h */,
+				46C2A8D31B7DAE7100525D40 /* OUParticipantCarousel.m */,
+			);
+			name = PostCarousels;
+			sourceTree = "<group>";
+		};
+		46C2A8D61B7DAED000525D40 /* MapCarousels */ = {
+			isa = PBXGroup;
+			children = (
+				468A21421B6B207E00C4D204 /* OUSchoolCarousel.h */,
+				468A21431B6B207E00C4D204 /* OUSchoolCarousel.m */,
+				468A213B1B6B1AD200C4D204 /* OULocationCarousel.h */,
+				468A213C1B6B1AD200C4D204 /* OULocationCarousel.m */,
+				4671C6141B6F44B2007281EA /* OULocationCarouselItem.h */,
+				4671C6151B6F44B2007281EA /* OULocationCarouselItem.m */,
+				4671C6111B6F3A8D007281EA /* OUListenButton.h */,
+				4671C6121B6F3A8D007281EA /* OUListenButton.m */,
+			);
+			name = MapCarousels;
+			sourceTree = "<group>";
+		};
+		46C2A8DA1B7DB13B00525D40 /* BuildingCarousel */ = {
+			isa = PBXGroup;
+			children = (
+				46C2A8CE1B7DADE000525D40 /* OUBuildingCarousel.h */,
+				46C2A8CF1B7DADE000525D40 /* OUBuildingCarousel.m */,
+				46C2A8D71B7DB13100525D40 /* OUBuildingCarouselButton.h */,
+				46C2A8D81B7DB13100525D40 /* OUBuildingCarouselButton.m */,
+			);
+			name = BuildingCarousel;
 			sourceTree = "<group>";
 		};
 		84CCA58BF86B275B2F25AA40 /* Pods */ = {
@@ -483,15 +535,19 @@
 			files = (
 				468A214A1B6B20F600C4D204 /* OUFeedViewController.m in Sources */,
 				466EF6CA1B688E8300D099BD /* OUUtility.m in Sources */,
+				46C2A8D01B7DADE000525D40 /* OUBuildingCarousel.m in Sources */,
+				46C2A8D41B7DAE7100525D40 /* OUParticipantCarousel.m in Sources */,
 				466EF6D31B688F8C00D099BD /* UIImage+ResizeAdditions.m in Sources */,
 				468A21471B6B20DA00C4D204 /* OUBubbleViewController.m in Sources */,
 				4605E1281B6C654000C3E917 /* OUProfileViewController.m in Sources */,
+				46C2A8D91B7DB13100525D40 /* OUBuildingCarouselButton.m in Sources */,
 				4671C6161B6F44B2007281EA /* OULocationCarouselItem.m in Sources */,
 				468A213D1B6B1AD200C4D204 /* OULocationCarousel.m in Sources */,
 				466EF6D21B688F8C00D099BD /* UIImage+AlphaAdditions.m in Sources */,
 				460D611D1B69C919008D1894 /* OUTabBarController.m in Sources */,
 				466EF6D41B688F8C00D099BD /* UIImage+RoundedCornerAdditions.m in Sources */,
 				466EF6DD1B689D4100D099BD /* MBProgressHUD.m in Sources */,
+				46C2A8CD1B7D968200525D40 /* OUFooterView.m in Sources */,
 				466EF6D91B689D2400D099BD /* Reachability.m in Sources */,
 				4605E12E1B6CAFC500C3E917 /* OUTheme.m in Sources */,
 				4671C6101B6D6BF4007281EA /* OUFetch.m in Sources */,

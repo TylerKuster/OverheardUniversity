@@ -18,6 +18,21 @@ static const CGFloat kLocationCarouselHeight = 200.0f;
     return [UIColor colorWithRed:0.02f green:0.33f blue:0.45f alpha:1.0f];
 }
 
++ (UIColor*)brandShadeColor
+{
+    return [UIColor colorWithRed:0.0f green:0.29f blue:0.39f alpha:1.0f];
+}
+
++ (UIColor*)darkBlue
+{
+    return [UIColor colorWithRed:0.02f green:0.2f blue:0.27f alpha:1.0f];
+}
+
++ (UIColor*)lightGrey
+{
+    return [UIColor colorWithRed:0.82f green:0.82f blue:0.82f alpha:1.0f];
+}
+
 + (UIColor*)topGradientColor
 {
     return [UIColor colorWithRed:0.07f green:0.5f blue:0.68f alpha:1.0f];
@@ -58,7 +73,7 @@ static const CGFloat kLocationCarouselHeight = 200.0f;
 
 + (UIFont*)textViewFont
 {
-    return [UIFont fontWithName:@"AvenirNext-Medium" size:18.0f];
+    return [UIFont fontWithName:@"AvenirNext-Regular" size:18.0f];
 }
 
 + (CGRect)areaCarouselRect
@@ -76,6 +91,23 @@ static const CGFloat kLocationCarouselHeight = 200.0f;
     CGFloat locationCarouselHeight = kAreaCarouselHeight - kLocationCarouselHeight;
     
     return CGRectMake(0.0f, 120.0f, screenWidth, 300.0f);
+}
+
++ (CGRect)createPostTextViewActiveRect
+{
+    CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width;
+    CGFloat leadingDistance = 69.0f;
+    CGFloat trailingDistance = 72.0f;
+    CGFloat width = screenWidth - leadingDistance - trailingDistance;
+    
+    return CGRectMake(leadingDistance, 8.0f, width, 32.0f);
+}
+
++ (CGRect)createPostTextViewNormalRect
+{
+    CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width;
+    
+    return CGRectMake((screenWidth / 2.0f) - 99.5, 10.0f, 199, 28);
 }
 
 @end

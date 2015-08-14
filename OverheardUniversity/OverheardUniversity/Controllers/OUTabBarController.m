@@ -9,19 +9,18 @@
 
 #import "OUTabBarController.h"
 #import "OUTheme.h"
-#import "OUCreatePostTextView.h"
+#import "OUFooterView.h"
 
 static const CGFloat kHeaderBarHeight = 70.0f;
 static const CGFloat kFooterBarHeight = 48.0f;
 
-@interface OUTabBarController () <UITextViewDelegate>
+@interface OUTabBarController () <UITextViewDelegate, OUFooterViewDelegate>
 
 @property (nonatomic, retain) UIButton* searchButton;
 @property (nonatomic, retain) UIButton* profileButton;
 
 @property (nonatomic, retain) UIView* headerBar;
-@property (nonatomic, retain) OUCreatePostTextView* postTextView;
-@property (nonatomic, retain) UIView* footerBar;
+@property (nonatomic, retain) OUFooterView* footerBar;
 
 @end
 
@@ -32,10 +31,13 @@ static const CGFloat kFooterBarHeight = 48.0f;
     CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width;
     CGFloat screenHeight = [UIScreen mainScreen].bounds.size.height;
     
-    [self createHeaderViewWithWidth:screenWidth];
-    [self createFooterViewWithWidth:screenWidth andHeight:screenHeight];
+    self.footerBar = [[OUFooterView alloc] initWithFrame:CGRectMake(0.0f, screenHeight - kFooterBarHeight, screenWidth, kFooterBarHeight)];
+    self.footerBar.delegate = self;
+    [self.view insertSubview:self.footerBar atIndex:TopLevel];
     
-//    self.selectedIndex = 0;
+    [self createHeaderViewWithWidth:screenWidth];
+    
+//    self.selectedIndex = 2;
     if (![PFUser currentUser]) {
 //        OUOnboardingViewController *onboardingViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"onboardingVC"];
         //    [loginViewController setDelegate:self];
@@ -76,9 +78,27 @@ static const CGFloat kFooterBarHeight = 48.0f;
     
 }
 
+- (void)awakeFromNib
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHideOrShow:) name:UIKeyboardWillHideNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHideOrShow:) name:UIKeyboardWillShowNotification object:nil];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)keyboardWillHideOrShow:(NSNotification *)notification
+{
+    NSDictionary *userInfo = [notification userInfo];
+    NSValue* keyboardFrame = [userInfo objectForKey:UIKeyboardFrameEndUserInfoKey];
+
+    CGRect keyboardRect = [keyboardFrame CGRectValue];
+    keyboardRect = [self.view convertRect:keyboardRect fromView:nil];
+    
+    CGFloat keyboardTop = keyboardRect.origin.y;
+    self.footerBar.frame = CGRectMake(0.0f, keyboardTop - kFooterBarHeight, [UIScreen mainScreen].bounds.size.width, kFooterBarHeight);
 }
 
 - (void)createHeaderViewWithWidth:(CGFloat)width {
@@ -106,36 +126,10 @@ static const CGFloat kFooterBarHeight = 48.0f;
     [self.headerBar insertSubview:logo atIndex:BaseLevel];
 }
 
-- (void)createFooterViewWithWidth:(CGFloat)width andHeight:(CGFloat)height {
-    
-    self.footerBar = [[UIView alloc] initWithFrame:CGRectMake(0.0f, height - kFooterBarHeight, width, kFooterBarHeight)];
-    self.footerBar.backgroundColor = [OUTheme brandColor];
-    
-    [self.view insertSubview:self.footerBar atIndex:TopLevel];
-    
-    UIButton* postMap = [UIButton buttonWithType:UIButtonTypeCustom];
-    postMap.frame = CGRectMake(16.0f, 8.0f, 32.0f, 32.0f);
-    postMap.backgroundColor = [UIColor whiteColor];
-    
-    [self.footerBar insertSubview:postMap atIndex:BaseLevel];
-    
-    UIButton* profile = [UIButton buttonWithType:UIButtonTypeCustom];
-    profile.frame = CGRectMake(width - 48.0f, 8.0f, 32.0f, 32.0f);
-    profile.backgroundColor = [UIColor whiteColor];
-    
-    [self.footerBar insertSubview:profile atIndex:BaseLevel];
-    
-    OUCreatePostTextView* postTextView = [[OUCreatePostTextView alloc]initWithFrame:CGRectMake((width / 2.0f) - 99.5, 10.0f, 199, 28)];
-    postTextView.delegate = self;
-    [self.footerBar addSubview:postTextView];
+#pragma mark - Footer Delegate Methods
 
-}
-
-#pragma mark - Create Post Text View Delegate
-
-- (BOOL)textViewShouldBeginEditing:(UITextView *)textView {
-    NSLog(@"got it");
-    return YES;
+- (void)presentCreatePostView {
+    NSLog(@"show post create view");
 }
 
 @end

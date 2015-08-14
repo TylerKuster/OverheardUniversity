@@ -13,8 +13,13 @@
 
 - (void)commonInit
 {
-    //    self.backgroundColor = [UIColor purpleColor];
+    self.tintColor = [UIColor whiteColor];
+    self.layer.borderColor = [[OUTheme darkBlue]CGColor];
+    self.layer.borderWidth = 1.0f;
+    self.layer.cornerRadius = 0.0f;
+    self.backgroundColor = [OUTheme brandShadeColor];
     self.font = [OUTheme textViewFont];
+    self.textColor = [OUTheme lightGrey];
     [self setPlaceholder:NSLocalizedString(@"What have you heard?", nil)];
 }
 
@@ -40,9 +45,9 @@
     [super setPlaceholder:placeholder];
     
     // Vertically centers the text - [TK]
-    self.textContainerInset = UIEdgeInsetsMake(2.5f, 0, 0, 0);
+    self.textContainerInset = UIEdgeInsetsMake(4.0f, 0, 0, 0);
     
-    self.placeholderColor = [UIColor grayColor];
+    self.placeholderColor = [OUTheme lightGrey];
 }
 
 @end
