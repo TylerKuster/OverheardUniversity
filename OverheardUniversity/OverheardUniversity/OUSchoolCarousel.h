@@ -8,6 +8,14 @@
 
 #import "iCarousel.h"
 
+typedef NS_ENUM(NSInteger, CarouselState)
+{
+    CarouselStateHidden,
+    CarouselStateVisible,
+};
+
 @interface OUSchoolCarousel : iCarousel <iCarouselDelegate, iCarouselDataSource>
+
+- (void)setCarouselState:(CarouselState)carouselState;
 
 @end

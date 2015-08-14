@@ -20,7 +20,6 @@ static const CGFloat kFooterBarHeight = 48.0f;
 @property (nonatomic, retain) UIButton* profileButton;
 
 @property (nonatomic, retain) UIView* headerBar;
-@property (nonatomic, retain) OUFooterView* footerBar;
 
 @end
 
@@ -29,13 +28,10 @@ static const CGFloat kFooterBarHeight = 48.0f;
 - (void)commonInit
 {
     CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width;
-    CGFloat screenHeight = [UIScreen mainScreen].bounds.size.height;
     
-    self.footerBar = [[OUFooterView alloc] initWithFrame:CGRectMake(0.0f, screenHeight - kFooterBarHeight, screenWidth, kFooterBarHeight)];
-    self.footerBar.delegate = self;
-    [self.view insertSubview:self.footerBar atIndex:TopLevel];
     
     [self createHeaderViewWithWidth:screenWidth];
+    
     
 //    self.selectedIndex = 2;
     if (![PFUser currentUser]) {
@@ -74,31 +70,11 @@ static const CGFloat kFooterBarHeight = 48.0f;
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor blueColor];
-   
-    
-}
-
-- (void)awakeFromNib
-{
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHideOrShow:) name:UIKeyboardWillHideNotification object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHideOrShow:) name:UIKeyboardWillShowNotification object:nil];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (void)keyboardWillHideOrShow:(NSNotification *)notification
-{
-    NSDictionary *userInfo = [notification userInfo];
-    NSValue* keyboardFrame = [userInfo objectForKey:UIKeyboardFrameEndUserInfoKey];
-
-    CGRect keyboardRect = [keyboardFrame CGRectValue];
-    keyboardRect = [self.view convertRect:keyboardRect fromView:nil];
-    
-    CGFloat keyboardTop = keyboardRect.origin.y;
-    self.footerBar.frame = CGRectMake(0.0f, keyboardTop - kFooterBarHeight, [UIScreen mainScreen].bounds.size.width, kFooterBarHeight);
 }
 
 - (void)createHeaderViewWithWidth:(CGFloat)width {
@@ -124,12 +100,6 @@ static const CGFloat kFooterBarHeight = 48.0f;
     logo.image = [UIImage imageNamed:@"overheardLogo"];
     
     [self.headerBar insertSubview:logo atIndex:BaseLevel];
-}
-
-#pragma mark - Footer Delegate Methods
-
-- (void)presentCreatePostView {
-    NSLog(@"show post create view");
 }
 
 @end

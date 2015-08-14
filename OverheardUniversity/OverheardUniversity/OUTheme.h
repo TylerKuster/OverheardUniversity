@@ -11,9 +11,13 @@
 @interface OUTheme : UIColor
 
 + (UIColor*)brandColor;
++ (UIColor*)brandTintColor;
 + (UIColor*)brandShadeColor;
 + (UIColor*)darkBlue;
 + (UIColor*)lightGrey;
++ (UIColor*)footerWhite;
++ (UIColor*)footerBorderColor;
++ (UIColor*)textViewWhite;
 + (UIColor*)offWhiteColor;
 + (UIColor*)randomColor;
 + (CAGradientLayer*)onboardingGradientFromView:(UIView*)view;

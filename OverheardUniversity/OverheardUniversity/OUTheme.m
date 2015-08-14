@@ -18,6 +18,10 @@ static const CGFloat kLocationCarouselHeight = 200.0f;
     return [UIColor colorWithRed:0.02f green:0.33f blue:0.45f alpha:1.0f];
 }
 
++ (UIColor*)brandTintColor {
+    return [self topGradientColor];
+}
+
 + (UIColor*)brandShadeColor
 {
     return [UIColor colorWithRed:0.0f green:0.29f blue:0.39f alpha:1.0f];

@@ -62,8 +62,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="bqx-CT-vqg">
-                                <rect key="frame" x="0.0" y="95" width="600" height="313"/>
+                                <rect key="frame" x="0.0" y="95" width="600" height="306"/>
                             </mapView>
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZOt-ge-DQp" userLabel="CreatePostView" customClass="OUCreatePostCarousel">
+                                <rect key="frame" x="0.0" y="70" width="600" height="530"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HAf-u8-EXd" customClass="OUSchoolCarousel">
                                 <rect key="frame" x="0.0" y="70" width="600" height="25"/>
                                 <constraints>
@@ -80,6 +84,8 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="ZOt-ge-DQp" firstAttribute="leading" secondItem="oCe-2Y-coO" secondAttribute="leading" id="CY6-ac-6uN"/>
+                            <constraint firstItem="ZOt-ge-DQp" firstAttribute="top" secondItem="oCe-2Y-coO" secondAttribute="top" constant="70" id="Ed7-w1-J5q"/>
                             <constraint firstAttribute="trailing" secondItem="2AN-R8-yoT" secondAttribute="trailing" id="H25-hk-xE4"/>
                             <constraint firstItem="HAf-u8-EXd" firstAttribute="leading" secondItem="oCe-2Y-coO" secondAttribute="leading" id="Kff-nU-9am"/>
                             <constraint firstItem="bqx-CT-vqg" firstAttribute="leading" secondItem="oCe-2Y-coO" secondAttribute="leading" id="LEh-xu-Lf2"/>
@@ -87,13 +93,16 @@
                             <constraint firstAttribute="trailing" secondItem="HAf-u8-EXd" secondAttribute="trailing" id="Odu-L1-xYO"/>
                             <constraint firstItem="2AN-R8-yoT" firstAttribute="leading" secondItem="oCe-2Y-coO" secondAttribute="leading" id="W1z-lH-sOw"/>
                             <constraint firstItem="HAf-u8-EXd" firstAttribute="top" secondItem="oCe-2Y-coO" secondAttribute="top" constant="70" id="fsv-hJ-Cmq"/>
-                            <constraint firstAttribute="bottom" secondItem="bqx-CT-vqg" secondAttribute="bottom" constant="192" id="ldl-Vz-hXb"/>
+                            <constraint firstAttribute="bottom" secondItem="bqx-CT-vqg" secondAttribute="bottom" constant="199" id="ldl-Vz-hXb"/>
                             <constraint firstItem="bqx-CT-vqg" firstAttribute="top" secondItem="oCe-2Y-coO" secondAttribute="top" constant="95" id="qj2-YS-HGQ"/>
+                            <constraint firstAttribute="bottom" secondItem="ZOt-ge-DQp" secondAttribute="bottom" id="rEv-FP-UZ2"/>
+                            <constraint firstAttribute="trailing" secondItem="ZOt-ge-DQp" secondAttribute="trailing" id="tXj-09-T89"/>
                             <constraint firstAttribute="trailing" secondItem="bqx-CT-vqg" secondAttribute="trailing" id="tdp-4H-4Ve"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="5nm-CV-p3B"/>
                     <connections>
+                        <outlet property="createPostCarousel" destination="ZOt-ge-DQp" id="9q5-8v-oqn"/>
                         <outlet property="locationCarousel" destination="2AN-R8-yoT" id="e7I-SW-yez"/>
                         <outlet property="mapView" destination="bqx-CT-vqg" id="7UQ-GK-nC0"/>
                         <outlet property="schoolCarousel" destination="HAf-u8-EXd" id="zJB-JP-jHP"/>

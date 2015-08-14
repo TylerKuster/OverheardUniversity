@@ -41,6 +41,7 @@
 		46C2A8D01B7DADE000525D40 /* OUBuildingCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = 46C2A8CF1B7DADE000525D40 /* OUBuildingCarousel.m */; };
 		46C2A8D41B7DAE7100525D40 /* OUParticipantCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = 46C2A8D31B7DAE7100525D40 /* OUParticipantCarousel.m */; };
 		46C2A8D91B7DB13100525D40 /* OUBuildingCarouselButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 46C2A8D81B7DB13100525D40 /* OUBuildingCarouselButton.m */; };
+		46C2A8DD1B7DB68400525D40 /* OUCreatePostCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = 46C2A8DC1B7DB68400525D40 /* OUCreatePostCarousel.m */; };
 		9F67C7024016B7D627C55C4C /* libPods-OverheardUniversity.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE19B57B8F3D9F615A3EB155 /* libPods-OverheardUniversity.a */; };
 /* End PBXBuildFile section */
 
@@ -121,6 +122,8 @@
 		46C2A8D31B7DAE7100525D40 /* OUParticipantCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OUParticipantCarousel.m; sourceTree = "<group>"; };
 		46C2A8D71B7DB13100525D40 /* OUBuildingCarouselButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OUBuildingCarouselButton.h; sourceTree = "<group>"; };
 		46C2A8D81B7DB13100525D40 /* OUBuildingCarouselButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OUBuildingCarouselButton.m; sourceTree = "<group>"; };
+		46C2A8DB1B7DB68400525D40 /* OUCreatePostCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OUCreatePostCarousel.h; sourceTree = "<group>"; };
+		46C2A8DC1B7DB68400525D40 /* OUCreatePostCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OUCreatePostCarousel.m; sourceTree = "<group>"; };
 		ADF1B07972D822386067B737 /* Pods-OverheardUniversity.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OverheardUniversity.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OverheardUniversity/Pods-OverheardUniversity.debug.xcconfig"; sourceTree = "<group>"; };
 		CE19B57B8F3D9F615A3EB155 /* libPods-OverheardUniversity.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OverheardUniversity.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6DA70CB314E5EEC9CF85ED2 /* Pods-OverheardUniversity.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OverheardUniversity.release.xcconfig"; path = "Pods/Target Support Files/Pods-OverheardUniversity/Pods-OverheardUniversity.release.xcconfig"; sourceTree = "<group>"; };
@@ -347,6 +350,8 @@
 		46C2A8D51B7DAEA800525D40 /* PostCarousels */ = {
 			isa = PBXGroup;
 			children = (
+				46C2A8DB1B7DB68400525D40 /* OUCreatePostCarousel.h */,
+				46C2A8DC1B7DB68400525D40 /* OUCreatePostCarousel.m */,
 				46C2A8DA1B7DB13B00525D40 /* BuildingCarousel */,
 				46C2A8D21B7DAE7100525D40 /* OUParticipantCarousel.h */,
 				46C2A8D31B7DAE7100525D40 /* OUParticipantCarousel.m */,
@@ -534,6 +539,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				468A214A1B6B20F600C4D204 /* OUFeedViewController.m in Sources */,
+				46C2A8DD1B7DB68400525D40 /* OUCreatePostCarousel.m in Sources */,
 				466EF6CA1B688E8300D099BD /* OUUtility.m in Sources */,
 				46C2A8D01B7DADE000525D40 /* OUBuildingCarousel.m in Sources */,
 				46C2A8D41B7DAE7100525D40 /* OUParticipantCarousel.m in Sources */,

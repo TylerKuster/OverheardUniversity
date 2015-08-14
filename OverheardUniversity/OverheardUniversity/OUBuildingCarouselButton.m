@@ -7,15 +7,32 @@
 //
 
 #import "OUBuildingCarouselButton.h"
+#import "OUBuildingCarousel.h"
 
 @implementation OUBuildingCarouselButton
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+- (void)commonInit
+{
+    //    self.backgroundColor = [UIColor purpleColor];
+    
 }
-*/
+
+- (id)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self){
+        [self commonInit];
+    }
+    return self;
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    if (self){
+        [self commonInit];
+    }
+    return self;
+}
 
 @end
